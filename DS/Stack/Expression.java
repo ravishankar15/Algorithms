@@ -82,33 +82,6 @@ public class Expression{
 
 	}
 
-
-	//Balancing paranthesis
-	public boolean balance(String exp){
-		Stack<Character> st = new Stack<Character>();
-		for(int i=0; i<exp.length(); i++){
-			char c = exp.charAt(i);
-
-			if(c == '(' || c == '{' || c == '[') 
-				st.push(c);
-
-			else{
-				if(st.isEmpty()){
-					return false;
-				} else if(!st.isEmpty() && !isPair(c, st.peek())){
-					return false;
-				} else {
-					st.pop();
-				}
-			}
-
-		}
-
-		return st.isEmpty();
-	}
-
-
-
 	//Utility methods 
 	//Returns the precedence of operator
 	public int precedence(char c){
@@ -126,18 +99,6 @@ public class Expression{
 		}
 
 		return -1;
-	}
-
-	//Utility method for the balancing paranthesis problem
-	public boolean isPair(char c, char top){
-
-		if(c == ')' && top == '(')
-			return true;
-		if(c == '}' && top == '{')
-			return true;
-		if(c == ']' && top == '[')
-			return true;
-		return false;
 	}
 
 }

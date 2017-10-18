@@ -9,8 +9,7 @@ public class Main{
 		//Expression related stack problems
 		/*Expression expr = new Expression();
 		System.out.println(expr.infixToPostFix("a+b*(c^d-e)^(f+g*h)-i"));//Converts an Infix Expression to Postfix Expression
-		System.out.println(expr.evalPostFixExpr("231*+9-")); //Evaluates the post fix expression
-		System.out.println(expr.balance("[()]{}{[()()]()}")); //Balancing Paranthesis*/
+		System.out.println(expr.evalPostFixExpr("231*+9-")); //Evaluates the post fix expression*/
 
 		//Manipulation using the next and nearest element in an array
 		/*NextElement ne = new NextElement();
@@ -37,9 +36,13 @@ public class Main{
 		/*StockSpan ss = new StockSpan();
 		print(ss.getStockPrice(new int[]{10, 4, 5, 90, 120, 80}));*/
 
-		Celebrity ceb = new Celebrity();
+		/*Celebrity ceb = new Celebrity();
 		System.out.println(ceb.findCelebStack());
-		System.out.println(ceb.findCelebTwoPoint());
+		System.out.println(ceb.findCelebTwoPoint());*/
+
+		Paranthesis par = new Paranthesis();
+		System.out.println(par.balance("[()]{}{[()()]()}"));
+		System.out.println(par.dupParanthesis("((a+(b))+(c+d))"));
 
 	}
 
