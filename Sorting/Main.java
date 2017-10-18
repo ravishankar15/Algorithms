@@ -1,0 +1,32 @@
+public class Main{
+	public static void main(String[] args) {
+		
+		int[] arr = {64, 34, 25, 12, 22, 11, 90};
+
+
+		/*SelectionSort ss = new SelectionSort();
+		print(ss.sort(arr));*/
+
+		/*BubbleSort bs = new BubbleSort();
+		print(bs.sort(arr));
+		print(bs.sortRecursive(arr, arr.length));*/
+
+
+		/*InsertionSort is = new InsertionSort();
+		print(is.sort(arr));
+		print(is.sortRecursive(arr, arr.length));*/
+
+		/*MergeSort ms = new MergeSort();
+		print(ms.sortRecursive(arr, 0, arr.length-1));*/
+
+		QuickSort qs = new QuickSort();
+		print(qs.sortRecursive(arr, 0, arr.length-1));
+
+	}
+
+	public static void print(int[] arr){
+		//System.out.println();
+		for(int i=0; i<arr.length; i++)
+			System.out.print(arr[i]+" ");
+	}
+}
