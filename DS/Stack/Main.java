@@ -39,6 +39,8 @@ public class Main{
 
 		Celebrity ceb = new Celebrity();
 		System.out.println(ceb.findCelebStack());
+		System.out.println(ceb.findCelebTwoPoint());
+
 	}
 
 	public static void print(int[] arr){

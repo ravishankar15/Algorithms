@@ -40,6 +40,26 @@ public class Celebrity{
 
 	}
 
+	public int findCelebTwoPoint(){
+		int a = 0;
+		int b = n-1;
+
+		while(a < b){
+			if(knows(a,b))
+				a++;
+			else 
+				b--;
+		}
+
+		for(int i=0; i<n; i++){
+			if(i != a && (knows(a, i) || !knows(i, a)))
+				return -1;
+		}
+
+		return a;
+
+	}
+
 
 	//Utility Method that return true if a knows b
 	public boolean knows(int a, int b){
