@@ -40,10 +40,15 @@ public class Celebrity{
 
 	}
 
+	//The similar kind of approach like above 
+	//but without stack and we use two pointer
 	public int findCelebTwoPoint(){
+
+		//Initializing two pointers as two corners
 		int a = 0;
 		int b = n-1;
 
+		//Keep moving till the two pointers become the same
 		while(a < b){
 			if(knows(a,b))
 				a++;
