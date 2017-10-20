@@ -12,9 +12,11 @@ public class Main{
 		System.out.println(expr.evalPostFixExpr("231*+9-")); //Evaluates the post fix expression*/
 
 		//Manipulation using the next and nearest element in an array
-		/*NextElement ne = new NextElement();
-		print(ne.nextGreater(arr)); //Find the next Greater element
-		print(ne.nearestSmaller(arr)); //Find the nearest Smaller element*/
+		NextElement ne = new NextElement();
+		//print(ne.nextGreater(arr)); //Find the next Greater element
+		//print(ne.nearestSmaller(arr)); //Find the nearest Smaller element
+		//print(ne.findMaxOfMin(new int[] {10, 20, 30, 50, 10, 70, 30}));
+		print(ne.nextSmallOfGreat(new int[]{5, 1, 9, 2, 5, 1, 7}));
 
 		//Stack Problems using Recursion
 		/*Recursion recur = new Recursion();
@@ -40,9 +42,11 @@ public class Main{
 		System.out.println(ceb.findCelebStack());
 		System.out.println(ceb.findCelebTwoPoint());*/
 
-		Paranthesis par = new Paranthesis();
-		System.out.println(par.balance("[()]{}{[()()]()}"));
+		//Paranthesis par = new Paranthesis();
+		/*System.out.println(par.balance("[()]{}{[()()]()}"));
 		System.out.println(par.dupParanthesis("((a+(b))+(c+d))"));
+		System.out.println(par.LongValidSubstring("()(()))))"));*/
+		//System.out.println(par.minReverse("{{{{"));
 
 	}
 
