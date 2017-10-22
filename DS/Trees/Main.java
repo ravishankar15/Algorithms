@@ -4,11 +4,11 @@ public class Main{
 
 		/*   TreeNode tree:
 
-		         	 1	
-				 / 	 	  \
+		         	   1	
+			      / 	\
 			    4		   8
-			 /	   \	 /	 \
-		    2	    5	9	 10
+			 /   \	 /	 \
+		      2	5	 9	 10
 
 
 		*/
@@ -23,7 +23,7 @@ public class Main{
 
 
       	//Traversal of Tree
-      	TreeTraversal tt = new TreeTraversal();
+      	//TreeTraversal tt = new TreeTraversal();
       	//tt.recursiveInOrder(tree); //Prints in InOrder(Left - Root - Right)
       	//tt.recursivePreOrder(tree); //Prints in PreOrder(Root - Left - Right)
       	//tt.recursivePostOrder(tree); //Prints in PostOrder(Left - Right - Root)
@@ -32,5 +32,14 @@ public class Main{
       	//System.out.println();
       	//tt.stackPreOrder(tree);
       	//tt.stackPostOrder(tree);
+
+
+            TreeCalculation tc = new TreeCalculation();
+            /*System.out.println(tc.getHeight(tree));
+            System.out.println(tc.getSize(tree));
+            System.out.println(tc.rootToLeafSum(tree, 10));
+            System.out.println(tc.isBalanced(tree));
+            System.out.println(tc.getDiameter(tree));*/
+            tc.rootToLeafPath(tree, new int[1000], 0);
 	}
 }
