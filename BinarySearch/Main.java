@@ -10,5 +10,6 @@ public class Main{
 
 		CeilingAndFloor cf =  new CeilingAndFloor();
 		System.out.println(cf.getCeiling(new int[]{1, 2, 8, 10, 10, 12, 19}, 0, 6, 5));
+		System.out.println(cf.getFloor(new int[]{1, 2, 8, 10, 10, 12, 19}, 0, 6, 5));
 	}
 }
