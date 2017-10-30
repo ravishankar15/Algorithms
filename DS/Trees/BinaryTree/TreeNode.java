@@ -3,6 +3,16 @@ public class TreeNode{
 	private TreeNode left;
 	private TreeNode right;
 
+	//Utility for storing any additional nodes
+	private TreeNode next;
+
+	public TreeNode(int data, TreeNode left, TreeNode right, TreeNode next){
+		this.data = data;
+		this.left = left;
+		this.right = right;
+		this.next = next;
+	}
+
 	public TreeNode(int data, TreeNode left, TreeNode right){
 		this.data = data;
 		this.left = left;
@@ -31,5 +41,14 @@ public class TreeNode{
 
 	public TreeNode getRight(){
 		return this.right;
+	}
+
+
+	public TreeNode getNext(){
+		return this.next;
+	}
+
+	public void setNext(TreeNode next){
+		this.next = next;
 	}
 }

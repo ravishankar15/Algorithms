@@ -51,7 +51,8 @@ public class TreeCalculation{
 	}
 
 	//http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
-	// Note: This solution is not optimal Refer the link for optimal
+	//This: O(n^2)
+	// Note: This solution is not optimal Refer the link or below for optimal
 	public boolean isBalanced(TreeNode tree){
 		if(tree == null)
 			return true;
@@ -66,6 +67,35 @@ public class TreeCalculation{
 
 		//If we reach here the tree is not balanced
 		return false;
+	}
+
+	//http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
+	//Note: This is an optimized solution with TC: O(n)
+	public boolean isBalancedOptimized(TreeNode tree, Height height){
+
+		if(tree == null){
+			height.height = 0;
+			return true;
+		}
+
+		//Create new height object for each roots left and right
+		//So that we can track the heights instead of calculating it again
+		Height lheight = new Height(); Height rheight = new Height();
+		boolean lb = isBalancedOptimized(tree.getLeft(), lheight);
+		boolean rb = isBalancedOptimized(tree.getRight(), rheight);
+
+		//Using the height of left and right calculate the height of its root
+		int lh = lheight.height; int rh = rheight.height;
+		height.height = 1 + (lh > rh ? lh : rh);
+
+
+		//If the height is not balanced return false
+		//Else return true if both its left and right subtree are balanced
+		if(Math.abs(lh-rh) >= 2)
+			return false;
+		else 
+			return lb && rb;
+
 	}
 
 

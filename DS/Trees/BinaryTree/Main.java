@@ -34,18 +34,24 @@ public class Main{
       	//tt.stackPostOrder(tree);
 
 
-            /*TreeCalculation tc = new TreeCalculation();
-            System.out.println(tc.getHeight(tree));
-            System.out.println(tc.getSize(tree));
-            System.out.println(tc.rootToLeafSum(tree, 10));
-            System.out.println(tc.isBalanced(tree));
-            System.out.println(tc.getDiameter(tree));
-            tc.rootToLeafPath(tree, new int[1000], 0);*/
+            //TreeCalculation tc = new TreeCalculation();
+            //System.out.println(tc.getHeight(tree));
+            //System.out.println(tc.getSize(tree));
+            //System.out.println(tc.rootToLeafSum(tree, 10));
+            //System.out.println(tc.isBalanced(tree));
+            //System.out.println(tc.isBalancedOptimized(tree, new Height()));
+            //System.out.println(tc.getDiameter(tree));
+            //tc.rootToLeafPath(tree, new int[1000], 0);
 
-            TreeConstruction tct = new TreeConstruction();
+            //TreeConstruction tct = new TreeConstruction();
             //recursiveInOrder(tct.buildTreeFrmInAndPre(new int[]{2,4,5,1,9,8,10}, new int[]{1,4,2,5,8,9,10}, 0, 6));
             //recursiveInOrder(tct.buildTreeFrmInAndLevel(new TreeNode(0, null, null), new int[]{2,4,5,1,9,8,10}, new int[]{1,4,8,2,5,9,10}, 0, 6));
             //recursiveInOrder(tct.buildTreeFrmPreAndPost(new int[]{1,2,4,8,9,5,3,6,7}, new int[]{8,9,4,5,2,6,7,3,1}, 0, 8));
+
+
+            TreeConnection tcon = new TreeConnection();
+            tcon.populateInorderSucc(tree, new TreeNode(-1, null, null));
+
 	}
 
       static void recursiveInOrder(TreeNode tree){
@@ -56,4 +62,9 @@ public class Main{
             System.out.print(tree.getData()+" ");
             recursiveInOrder(tree.getRight());
       }
+}
+
+//Utility class for height calculation problem
+class Height{
+      int height = 0;
 }

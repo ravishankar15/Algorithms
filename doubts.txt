@@ -1,5 +1,2 @@
-1) http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
-Notes: Unclear on the optimized solution
-
-2) http://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+1) http://www.geeksforgeeks.org/diameter-of-a-binary-tree/
 Notes: Unclear on the optimized solution

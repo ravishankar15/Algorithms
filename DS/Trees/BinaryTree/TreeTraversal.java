@@ -99,4 +99,5 @@ public class TreeTraversal{
 		while(!st2.isEmpty())
 			System.out.print(st2.pop().getData()+" ");
 	}
+
 }

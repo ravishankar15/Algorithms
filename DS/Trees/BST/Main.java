@@ -24,9 +24,18 @@ public class Main{
 
 
 
-		Basics b = new Basics();
+		//Basics b = new Basics();
 		//System.out.println(b.search(tree, 30));
-		recursiveInOrder(b.insert(b.insert(b.insert(b.insert(b.insert(b.insert(new TreeNode(50, null, null), 30), 20),40),70),60),80));
+		//recursiveInOrder(b.insert(b.insert(b.insert(b.insert(b.insert(b.insert(new TreeNode(50, null, null), 30), 20),40),70),60),80));
+            //recursiveInOrder(b.delete(tree, 40));
+
+            /*TreeConstruction tc = new TreeConstruction();
+            recursiveInOrder(tc.buildTreeFromPre(new int[]{10, 5, 1, 7, 40, 50}, 10, new Index(), Integer.MIN_VALUE, Integer.MAX_VALUE));
+            recursiveInOrder(tc.buildTreeFromPreStack(new int[]{10, 5, 1, 7, 40, 50}));*/
+
+            TreeCalculation tcal = new TreeCalculation();
+            System.out.println(tcal.isBST(tree, Integer.MIN_VALUE, Integer.MAX_VALUE));
+
 	}
 
 
@@ -38,4 +47,9 @@ public class Main{
 		System.out.print(tree.getData()+" ");
 		recursiveInOrder(tree.getRight());
 	}
+}
+
+//Utility class for the tree construction problem
+class Index{
+      int index = 0;
 }
