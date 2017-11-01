@@ -17,5 +17,7 @@ git add .gitignore
 git commit -m "First commit"
 git remote add origin https://github.com/ravishankar15/Algorithms.git
 git push origin master
+
 git pull origin master --allow-unrelated-histories
+git clone <url>
 
