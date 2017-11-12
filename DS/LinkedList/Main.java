@@ -39,8 +39,8 @@ public class Main{
 
 	    ListNode head2 = new ListNode(1, null);
 		head2.setNext(new ListNode(2, null));
-		head2.getNext().setNext(new ListNode(3, null));
-	    head2.getNext().getNext().setNext(new ListNode(4, null));
+		head2.getNext().setNext(new ListNode(2, null));
+	    head2.getNext().getNext().setNext(new ListNode(1, null));
 
 
 	    //Searching an element in the Linked List
@@ -49,9 +49,9 @@ public class Main{
 	    //System.out.println(find.findElementRecursive(head, 31)); //Recursively Finding an Element 
 
 	    //Reversing a Linked List
-	    Reverse rev = new Reverse();
+	    //Reverse rev = new Reverse();
 	    //print(rev.reverseList(head)); //Iterative Reversing a Linked List
-	    print(rev.reverseListRecursive(head, null)); //Recursively Reversing a Linked List
+	    //print(rev.reverseListRecursive(head, null)); //Recursively Reversing a Linked List
 	    //rev.printReverseList(head); //Only printing the Linked List in Reverse order without actually reversing a link 
 	    //print(rev.reverseBetween(head, 2, 4)); // Reverses the linked list between two specified points
 	    //print(rev.swapPairWise(head)); // Pairwise swapping the ListNodes
@@ -71,6 +71,10 @@ public class Main{
 	    //print(la.addOneToList(head1));
 	    //print(la.addTwoNumAsList(head1, head2));
 	    //print(la.addTwoLinkedList(head1, head2));
+
+
+	    Palindrome p = new Palindrome();
+	    System.out.println(p.isPalindrome(head2, head2));
 
 	}
 

@@ -19,7 +19,15 @@ public class Main{
       	tree.getLeft().setLeft(new TreeNode(2, null, null));
       	tree.getLeft().setRight(new TreeNode(5, null, null));
       	tree.getRight().setLeft(new TreeNode(9, null, null));
-      	//tree.getRight().setRight(new TreeNode(10, null, null));
+      	tree.getRight().setRight(new TreeNode(10, null, null));
+
+
+
+            TreeNode tree1 = new TreeNode(1,null, null);
+            tree.setLeft(new TreeNode(4, null, null));
+            tree.setRight(new TreeNode(8, null, null));
+            /*tree.getLeft().setLeft(new TreeNode(2, null, null));
+            tree.getLeft().setRight(new TreeNode(5, null, null));*/
 
 
       	//Traversal of Tree
@@ -49,8 +57,17 @@ public class Main{
             //recursiveInOrder(tct.buildTreeFrmPreAndPost(new int[]{1,2,4,8,9,5,3,6,7}, new int[]{8,9,4,5,2,6,7,3,1}, 0, 8));
 
 
-            TreeConnection tcon = new TreeConnection();
-            tcon.populateInorderSucc(tree, new TreeNode(-1, null, null));
+            //TreeConnection tcon = new TreeConnection();
+            //tcon.populateInorderSucc(tree, new TreeNode(-1, null, null));
+            //printLevelConnection(tcon.connectLevelOrder(tree));
+            /*printLevelConnection(tcon.connectLevelExtendPre(tree));
+            printLevelConnection(tcon.connectLevelOptiRecur(tree));*/
+            //printLevelConnection(tcon.connectLevelOpti(tree));
+
+            TreeValidation tv = new TreeValidation();
+            System.out.println(tv.isSubTree(tree, tree1));
+
+
 
 	}
 
@@ -61,6 +78,25 @@ public class Main{
             recursiveInOrder(tree.getLeft());
             System.out.print(tree.getData()+" ");
             recursiveInOrder(tree.getRight());
+      }
+
+      static void printLevelConnection(TreeNode tree){
+            Queue<TreeNode> queue = new LinkedList<TreeNode>();
+            queue.add(tree);
+            while(!queue.isEmpty()){
+                  int size = queue.size();
+                  //while loop for printing the level order in next next line
+                  while(size-- > 0){
+                        TreeNode temp = queue.poll();
+                        if(temp.getLeft() != null)
+                              queue.add(temp.getLeft());
+                        if(temp.getRight() != null)
+                              queue.add(temp.getRight());
+                        System.out.print("* " + temp.getData()+" -- "+(temp.getNext() != null ? temp.getNext().getData() : temp.getNext()));
+                  }
+                  System.out.println();
+            }
+
       }
 }
 
