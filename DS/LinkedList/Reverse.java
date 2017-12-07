@@ -102,4 +102,31 @@ public class Reverse{
 
 		return head;
 	}
+
+
+	//http://www.geeksforgeeks.org/reverse-a-list-in-groups-of-given-size/
+	public ListNode reverseInGroups(ListNode head, int k){
+		ListNode curr = head;
+		ListNode prev = null;
+		ListNode next = null;
+
+		int count = 0;
+		/* Reverse first k nodes of linked list */
+		while(count < k && curr != null){
+			next = curr.getNext();
+			curr.setNext(prev);
+			prev = curr;
+			curr = next;
+			count++;
+		}
+
+		/* next is now a pointer to (k+1)th node 
+          Recursively call for the list starting from current.*/
+		if(next != null){
+			head.setNext(reverseInGroups(next, k));
+		}
+
+		//prev is now head of input list
+		return prev;
+	}
 }

@@ -116,4 +116,39 @@ public class ArrayArrangement{
 		while(j<n2)
 			arr[k++] = right[j++];
 	}
+
+	//http://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
+	//Note: We increment mid in case 0 because the unsorted is present to the right of mid
+	// hence we should not increment mid while swapping towards right
+	public int[] sort012(int[] arr){
+		int low = 0; int high = arr.length - 1;
+		int mid = 0; int temp=0;
+
+		while(mid <= high){
+			switch(arr[mid]){
+				case 0: {
+					temp = arr[low];
+					arr[low] = arr[mid];
+					arr[mid] = temp;
+					mid++;
+					low++;
+					break;
+				}
+
+				case 1: {
+					mid++;
+					break;
+				}
+
+				case 2: {
+					temp = arr[high];
+					arr[high] = arr[mid];
+					arr[mid] = temp;
+					high--;
+					break;
+				}
+			}
+		}
+		return arr;
+	}
 }
