@@ -54,9 +54,10 @@ public class Main{
 	    //print(rev.reverseListRecursive(head, null)); //Recursively Reversing a Linked List
 	    //rev.printReverseList(head); //Only printing the Linked List in Reverse order without actually reversing a link 
 	    //print(rev.reverseBetween(head, 2, 4)); // Reverses the linked list between two specified points
+	    print(rev.swapKthNode(head, 3));
 	    //print(rev.swapPairWise(head)); // Pairwise swapping the ListNodes
 	    //print(rev.swapPairWiseValues(head)); // Pairwise swapping the values alone
-	    print(rev.reverseInGroups(head, 3));
+	    //print(rev.reverseInGroups(head, 3));
 
 	    //Detecting a Loop in Linked List
 	    //LoopDetection loop = new LoopDetection();

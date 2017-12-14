@@ -64,6 +64,64 @@ public class Reverse{
 
 	}
 
+	//http://www.geeksforgeeks.org/swap-kth-node-from-beginning-with-kth-node-from-end-in-a-linked-list/
+	//Note: The base conditions are important in this problem
+	public ListNode swapKthNode(ListNode head, int k){
+
+		//Count the number of nodes
+		int n = getSize(head);
+
+		//Check if k is valid
+		if(n<k)
+			return head;
+
+		// If x (kth node from start) and y(kth node from end)
+        // are same
+		if(2*k - 1== n)
+			return head;
+
+		// Find the kth node from beginning of linked list.
+        // We also find previous of kth node because we need
+        // to update next pointer of the previous.
+		ListNode x = head;
+		ListNode xPrev = null;
+		for(int i=1; i<k; i++){
+			xPrev = x;
+			x = x.getNext();
+		}
+
+		// Similarly, find the kth node from end and its 
+        // previous. kth node from end is (n-k+1)th node
+        // from beginning
+		ListNode y = head;
+		ListNode yPrev = null;
+		for(int i=1; i<n-k+1; i++){
+			yPrev = y;
+			y = y.getNext();
+		}
+
+		if(xPrev != null)
+			xPrev.setNext(y);
+		if(yPrev != null)
+			yPrev.setNext(x);
+
+
+		ListNode temp = x.getNext();
+		x.setNext(y.getNext());
+		y.setNext(temp);
+
+
+		// Change head pointers when k is 1 or n
+		if(k == 1)
+			head = y;
+
+		if(k==n)
+			head = x;
+
+		return head;
+
+	}
+
 
 	//Pairwise swapping the elements
 	public ListNode swapPairWise(ListNode head){
@@ -128,5 +186,15 @@ public class Reverse{
 
 		//prev is now head of input list
 		return prev;
+	}
+
+	//Utility Method
+	public int getSize(ListNode head){
+		int count = 0;
+		while(head != null){
+			head = head.getNext();
+			count++;
+		}
+		return count;
 	}
 }
