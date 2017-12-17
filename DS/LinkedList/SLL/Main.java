@@ -49,12 +49,12 @@ public class Main{
 	    //System.out.println(find.findElementRecursive(head, 31)); //Recursively Finding an Element 
 
 	    //Reversing a Linked List
-	    Reverse rev = new Reverse();
+	    //Reverse rev = new Reverse();
 	    //print(rev.reverseList(head)); //Iterative Reversing a Linked List
 	    //print(rev.reverseListRecursive(head, null)); //Recursively Reversing a Linked List
 	    //rev.printReverseList(head); //Only printing the Linked List in Reverse order without actually reversing a link 
 	    //print(rev.reverseBetween(head, 2, 4)); // Reverses the linked list between two specified points
-	    print(rev.swapKthNode(head, 3));
+	    //print(rev.swapKthNode(head, 3));
 	    //print(rev.swapPairWise(head)); // Pairwise swapping the ListNodes
 	    //print(rev.swapPairWiseValues(head)); // Pairwise swapping the values alone
 	    //print(rev.reverseInGroups(head, 3));
@@ -77,6 +77,10 @@ public class Main{
 
 	   /* Palindrome p = new Palindrome();
 	    System.out.println(p.isPalindrome(head2, head2));*/
+
+
+	    MergeSort ms = new MergeSort();
+	    print(ms.sort(head));
 
 	}
 
