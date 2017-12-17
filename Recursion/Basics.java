@@ -29,4 +29,18 @@ public class Basics{
 		System.out.print(n+" ");
 
 	}
+
+	//http://www.geeksforgeeks.org/practice-questions-for-recursion-set-4/
+	public int getMax(int[] arr, int n){
+		int x;
+		if(n == 1)
+			return arr[0];
+		else
+			x = getMax(arr, n-1);
+		if(x > arr[n-1])
+			return x;
+		else
+			return arr[n-1]; 
+	}
+
 }
