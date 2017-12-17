@@ -1,0 +1,17 @@
+=> Recursion
+	-> The process in which the function calls itself directly or indirectly is called recursion and the corresponding function is called a recursive function
+	-> Every recursive solution should have a base case. The first step of framing a recursive solution is to identify the base case.
+
+=>Tailed Recursion
+	-> A recursive function is tail recursive when recursive call is the last thing excecuted by the function.
+		E.g., public void print(int n){
+
+			//Base Condition
+			if(n<0)
+				return;
+				
+			System.out.println(n+" ");
+
+			//The last executed statement is recursive call
+			print(n-1);
+		}
