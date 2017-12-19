@@ -43,4 +43,25 @@ public class Basics{
 			return arr[n-1]; 
 	}
 
+	//Recursive fibonacci
+	public int fibo(int n){
+		if(n <= 1)
+			return n;
+		return fibo(n-1) + fibo(n-2);
+	}
+
+	//Recursive factorial
+	public int fact(int n){
+		if(n == 1)
+			return 1;
+		return n * fact(n-1);
+	}
+
+	//Calculate the GCD of two numbers
+	public int gcd(int a, int b){
+		if(b == 0)
+			return a;
+		return gcd(b, a%b);
+	}
+
 }
