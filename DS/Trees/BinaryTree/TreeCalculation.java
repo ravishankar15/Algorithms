@@ -142,4 +142,56 @@ public class TreeCalculation{
 			}
 		}
 	}
+
+	//https://www.geeksforgeeks.org/find-the-maximum-sum-path-in-a-binary-tree/
+	//Note: Private variables are declared to keep track globally
+	private int max = Integer.MIN_VALUE;
+	private TreeNode target;
+	public TreeNode maxSumPath(TreeNode tree){
+		if(tree == null)
+			return null;
+
+		//Identify the target leaf with the maximum sum
+		getTargetLeaf(tree, 0);
+		return target;
+	}
+	private void getTargetLeaf(TreeNode tree, int curMax){
+
+		if(tree == null)
+			return;
+
+		curMax = curMax + tree.getData();
+
+		if(tree.getLeft() == null && tree.getRight() == null){
+			if(curMax > max){
+				max = curMax;
+				target = tree;
+			}
+		}
+
+		getTargetLeaf(tree.getLeft(), curMax);
+		getTargetLeaf(tree.getRight(), curMax);
+
+	}
+
+	//https://www.geeksforgeeks.org/sum-numbers-formed-root-leaf-paths/
+	public int sumNumRootToLeaf(TreeNode tree, int val){
+		if(tree == null)
+			return 0;
+
+		//This calculation is to be noted (val = val + (tree.getData() * 10^(0,1,2.....n))
+		//Can also be used which makes the logic tricky
+		val = (val*10) + tree.getData();
+
+		if(tree.getLeft() == null && tree.getRight() == null){
+			System.out.println(val);
+			return val;
+		}
+
+		return sumNumRootToLeaf(tree.getLeft(), val)
+			+ sumNumRootToLeaf(tree.getRight(), val);
+	}
+
+
+
 }

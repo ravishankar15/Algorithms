@@ -3,6 +3,7 @@ public class TreeConnection{
 	
 	//http://www.geeksforgeeks.org/populate-inorder-successor-for-all-nodes/
 	//Note: Traverse the tree in reverse inorder and keep track of previous node
+	private static TreeNode nextRef;
 	public void populateInorderSucc(TreeNode tree, TreeNode nextRef){
 
 		// The first visited node will be the rightmost node
