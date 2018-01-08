@@ -5,6 +5,7 @@ public class TreeNode{
 
 	//Utility for storing any additional nodes
 	private TreeNode next;
+	private int hd;
 
 	public TreeNode(int data, TreeNode left, TreeNode right, TreeNode next){
 		this.data = data;
@@ -17,6 +18,16 @@ public class TreeNode{
 		this.data = data;
 		this.left = left;
 		this.right = right;
+		
+		this.hd = Integer.MAX_VALUE;
+	}
+
+	public void setHd(int hd){
+		this.hd = hd;
+	}
+
+	public int getHd(){
+		return this.hd;
 	}
 
 	public void setData(int data){

@@ -1,0 +1,23 @@
+-> A BinaryHeap is a binary tree with the following properties.,
+	-> It is a complete tree(All levels are completely filled except possibly the last level and the last level has all the keys as left as possible). This property of binary heap makes them suitable to be stored in an array.
+-> Binary heap is of two types.,
+	-> Min Heap: The key at root must be minimum among all keys in binary heap. The same property must be 				true for all the nodes in the binary tree
+	-> Max Heap: Similar to min heap except the maximum element should be in the root
+
+-> A Binary heap is a complete binary tree. A binary heap is typically represented as array.,
+	-> The root element will be at A[0]
+	-> For ith node., 
+		-> A[(i-1)/2] 	  - Returns the parent node
+		-> A[(2*i)+1] - Returns the left child node
+		-> A[(2*i)+2] - Returns the right child node
+
+	-> The traversal method used to achive array representaion is Level Order.
+
+				 1
+			   /   \
+		      3	    6
+		     / \   / 
+		    5   9 8
+
+	-> Array index - 0 | 1 | 2 | 3 | 4 | 5
+		     value - 1 | 3 | 6 | 5 | 9 | 8

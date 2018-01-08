@@ -20,6 +20,8 @@ public class Main{
       	tree.getLeft().setRight(new TreeNode(5, null, null));
       	tree.getRight().setLeft(new TreeNode(9, null, null));
       	tree.getRight().setRight(new TreeNode(10, null, null));
+            //tree.getRight().getLeft().setLeft(new TreeNode(11, null, null));
+            //tree.getRight().getRight().setLeft(new TreeNode(12, null, null));
 
 
 
@@ -44,6 +46,17 @@ public class Main{
             tree3.getRight().setLeft(new TreeNode(5, null, null));
 
 
+            TreeNode tree4 = new TreeNode(20, null, null);
+            tree4.setLeft(new TreeNode(8, null, null));
+            tree4.setRight(new TreeNode(22, null, null));
+            tree4.getLeft().setLeft(new TreeNode(5, null, null));
+            tree4.getLeft().setRight(new TreeNode(3, null, null));
+            tree4.getLeft().getRight().setLeft(new TreeNode(10, null, null));
+            tree4.getLeft().getRight().setRight(new TreeNode(14, null, null));
+            tree4.getRight().setLeft(new TreeNode(4, null, null));
+            tree4.getRight().setRight(new TreeNode(25, null, null));
+
+
       	//Traversal of Tree
       	//TreeTraversal tt = new TreeTraversal();
       	//tt.recursiveInOrder(tree); //Prints in InOrder(Left - Root - Right)
@@ -56,16 +69,23 @@ public class Main{
       	//tt.stackPostOrder(tree);
 
 
-            TreeCalculation tc = new TreeCalculation();
+            //TreeCalculation tc = new TreeCalculation();
             //System.out.println(tc.getHeight(tree));
             //System.out.println(tc.getSize(tree));
-            //System.out.println(tc.rootToLeafSum(tree, 10));
             //System.out.println(tc.isBalanced(tree));
             //System.out.println(tc.isBalancedOptimized(tree, new Height()));
             //System.out.println(tc.getDiameter(tree));
-            //tc.rootToLeafPath(tree, new int[1000], 0);
-            //printPath(tree, tc.maxSumPath(tree));
-            System.out.println(tc.sumNumRootToLeaf(tree, 0));
+            //System.out.println(tc.deepLeftLeaf(tree, 0, false).getData());
+
+            //RootToLeaf rtl = new RootToLeaf();
+            //System.out.println(rtl.rootToLeafSum(tree, 10));
+            //rtl.rootToLeafPath(tree, new int[1000], 0);
+            //printPath(tree, rtl.maxSumPath(tree, 0));
+            //System.out.println(rtl.sumNumRootToLeaf(tree, 0));
+            //recursiveInOrder(rtl.removeNodesNotInPath(tree, 18));
+            //System.out.println(rtl.findCloseLeaf(tree, new TreeNode[100], 8, 0));
+            //System.out.println(rtl.verticalSum(tree, 0).entrySet());
+
 
             //TreeConstruction tct = new TreeConstruction();
             //recursiveInOrder(tct.buildTreeFrmInAndPre(new int[]{2,4,5,1,9,8,10}, new int[]{1,4,2,5,8,9,10}, 0, 6));
@@ -84,6 +104,13 @@ public class Main{
             //System.out.println(tv.isSumTree(tree2));
             //System.out.println(tv.isFoldable(tree3.getLeft(), tree3.getRight()));
             //System.out.println(tv.isComplete(tree2));
+            //System.out.println(tv.isLeafAtSameLevel(tree, 1));
+
+            TreeView tvi = new TreeView();
+            //tvi.printLeftView(tree, 1);
+            //tvi.printRightView(tree, 1);
+            //System.out.println(tvi.printBottomView(tree4).entrySet());
+            System.out.println(tvi.printTopView(tree).entrySet());
 
 
 

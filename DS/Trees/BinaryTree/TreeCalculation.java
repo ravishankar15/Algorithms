@@ -23,33 +23,6 @@ public class TreeCalculation{
 			return getSize(tree.getLeft()) + 1 + getSize(tree.getRight());
 	}
 
-	//http://www.geeksforgeeks.org/root-to-leaf-path-sum-equal-to-a-given-number/
-	public boolean rootToLeafSum(TreeNode tree, int sum){
-		if(tree == null)
-			return (sum == 0);
-
-		else {
-			boolean res = false;
-
-			//Subract the sum from the nodes data
-			int subsum = sum - tree.getData();
-
-			//If the subsum reaches 0 return true
-			if(subsum == 0 && tree.getLeft() == null && tree.getRight() == null)
-				return true;
-			//The or condition is checked because we need to store the true value if found
-			//Because the recursive function runs through all the paths from root to leaf
-			if(tree.getLeft() != null){
-				res = res || rootToLeafSum(tree.getLeft(), subsum);
-			}
-			if(tree.getRight() != null){
-				res = res || rootToLeafSum(tree.getRight(), subsum);
-			}
-
-			return res;
-		}
-	}
-
 	//http://www.geeksforgeeks.org/how-to-determine-if-a-binary-tree-is-balanced/
 	//This: O(n^2)
 	// Note: This solution is not optimal Refer the link or below for optimal
@@ -118,80 +91,30 @@ public class TreeCalculation{
 		return Math.max(lh +  rh + 1, Math.max(ld, rd));
 	}
 
-	//http://www.geeksforgeeks.org/given-a-binary-tree-print-out-all-of-its-root-to-leaf-paths-one-per-line/
-	public void rootToLeafPath(TreeNode tree, int[] path, int len){
+	//https://www.geeksforgeeks.org/deepest-left-leaf-node-in-a-binary-tree/
+	private int max_level = Integer.MIN_VALUE;
+	private TreeNode result;
+	public TreeNode deepLeftLeaf(TreeNode tree, int level, boolean isLeft){
+		
+		//Base Case
 		if(tree == null)
-			return;
+			return result;
 
-		else {
-			//Adds the node data on the particular position
-			//First the left node is added and once it is printed the 
-			//corresponding right node is overridden on the same place
-			path[len] = tree.getData();
-			len++;
-			
-			//If the leaf node is reached print the path
-			if(tree.getLeft() == null && tree.getRight() == null){
-				for(int i=0; i<len; i++)
-					System.out.print(path[i]+" ");
-				System.out.println();
-			} else {
-				//Recursively call both subtrees
-				rootToLeafPath(tree.getLeft(), path, len);
-				rootToLeafPath(tree.getRight(), path, len);
-			}
-		}
-	}
-
-	//https://www.geeksforgeeks.org/find-the-maximum-sum-path-in-a-binary-tree/
-	//Note: Private variables are declared to keep track globally
-	private int max = Integer.MIN_VALUE;
-	private TreeNode target;
-	public TreeNode maxSumPath(TreeNode tree){
-		if(tree == null)
-			return null;
-
-		//Identify the target leaf with the maximum sum
-		getTargetLeaf(tree, 0);
-		return target;
-	}
-	private void getTargetLeaf(TreeNode tree, int curMax){
-
-		if(tree == null)
-			return;
-
-		curMax = curMax + tree.getData();
-
-		if(tree.getLeft() == null && tree.getRight() == null){
-			if(curMax > max){
-				max = curMax;
-				target = tree;
-			}
+		//Update when the node is a left leaf node and 
+		//the level is greater than the max level
+		if(isLeft && tree.getLeft() == null 
+			&& tree.getRight() == null 
+				&& level > max_level){
+			max_level = level;
+			result = tree;
 		}
 
-		getTargetLeaf(tree.getLeft(), curMax);
-		getTargetLeaf(tree.getRight(), curMax);
+		//Send boolean true only for the left child
+		deepLeftLeaf(tree.getLeft(), level+1, true);
+		deepLeftLeaf(tree.getRight(), level+1, false);
 
+		return result;
 	}
-
-	//https://www.geeksforgeeks.org/sum-numbers-formed-root-leaf-paths/
-	public int sumNumRootToLeaf(TreeNode tree, int val){
-		if(tree == null)
-			return 0;
-
-		//This calculation is to be noted (val = val + (tree.getData() * 10^(0,1,2.....n))
-		//Can also be used which makes the logic tricky
-		val = (val*10) + tree.getData();
-
-		if(tree.getLeft() == null && tree.getRight() == null){
-			System.out.println(val);
-			return val;
-		}
-
-		return sumNumRootToLeaf(tree.getLeft(), val)
-			+ sumNumRootToLeaf(tree.getRight(), val);
-	}
-
 
 
 }

@@ -101,4 +101,25 @@ public class TreeValidation{
 		return true;
 
 	}
+
+	//https://www.geeksforgeeks.org/check-leaves-level/
+	private int refLevel = 0;
+	public boolean isLeafAtSameLevel(TreeNode tree, int level){
+		if(tree == null)
+			return (level == refLevel);
+
+		if(tree.getLeft() == null && tree.getRight() == null){
+			//First time if the leaf is reached store the level 
+			//For checking with other leaves
+			if(refLevel == 0){
+				refLevel = level;
+				return true;
+			}
+			return (level == refLevel);
+		}
+
+
+		return isLeafAtSameLevel(tree.getLeft(), level + 1) 
+				&& isLeafAtSameLevel(tree.getRight(), level + 1);
+	}
 }
