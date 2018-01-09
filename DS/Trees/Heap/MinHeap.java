@@ -53,8 +53,8 @@ public class MinHeap{
 			System.out.println("Overflow: Heap is full");
 		}
 
-		//First insert the heapSize at the end
-		int i = heapapSize;
+		//First insert the key at the end of heap
+		int i = heapSize;
 		heapSize++;
 		harr[i] = key;
 
@@ -114,8 +114,8 @@ public class MinHeap{
 		extractMin();
 	}
 
-	// Decreases value at index 'i' to new_val.  It is assumed that
-	// new_val is smaller than harr[i].
+	// Decreases value at index 'i' to newval.  It is assumed that
+	// newval is smaller than harr[i].
 	public void decreaseKey(int i, int newval){
 		harr[i] = newval;
 		while(i != 0 && harr[parent(i)] > harr[i]){

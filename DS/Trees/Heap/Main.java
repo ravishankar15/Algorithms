@@ -13,5 +13,18 @@ public class Main{
 		min.print();
 
 
+		MaxHeap max = new MaxHeap(6);
+		max.insert(1);
+		max.insert(3);
+		max.insert(6);
+		max.insert(9);
+		max.insert(8);
+		max.insert(5);
+		max.print();
+		max.extractMax();
+		max.increaseKey(3, 20);
+		max.print();
+
+
 	}
 }
