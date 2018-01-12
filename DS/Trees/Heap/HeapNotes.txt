@@ -7,7 +7,7 @@
 -> A Binary heap is a complete binary tree. A binary heap is typically represented as array.,
 	-> The root element will be at A[0]
 	-> For ith node., 
-		-> A[(i-1)/2] 	  - Returns the parent node
+		-> A[(i-1)/2] - Returns the parent node
 		-> A[(2*i)+1] - Returns the left child node
 		-> A[(2*i)+2] - Returns the right child node
 
