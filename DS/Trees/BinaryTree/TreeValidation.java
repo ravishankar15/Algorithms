@@ -70,6 +70,7 @@ public class TreeValidation{
 	}
 
 	//https://www.geeksforgeeks.org/check-if-a-given-binary-tree-is-complete-tree-or-not/
+	//Note: Refer CheckHeap.java for recursive solution
 	public boolean isComplete(TreeNode tree){
 		if(tree == null)
 			return true;
