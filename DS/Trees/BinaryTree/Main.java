@@ -36,8 +36,8 @@ public class Main{
             tree2.setLeft(new TreeNode(10, null,null));
             tree2.setRight(new TreeNode(3, null, null));
             tree2.getLeft().setLeft(new TreeNode(4, null, null));
-            tree2.getLeft().setRight(new TreeNode(6, null, null));
-            tree2.getRight().setRight(new TreeNode(3, null, null));
+            //tree2.getLeft().setRight(new TreeNode(6, null, null));
+            tree2.getRight().setLeft(new TreeNode(3, null, null));
 
             TreeNode tree3 = new TreeNode(1, null, null);
             tree3.setLeft(new TreeNode(2, null, null));
@@ -86,11 +86,20 @@ public class Main{
             //System.out.println(rtl.findCloseLeaf(tree, new TreeNode[100], 8, 0));
             //System.out.println(rtl.verticalSum(tree, 0).entrySet());
 
+            ListNode head = new ListNode(10, null);
+            head.setNext(new ListNode(12, null));
+            head.getNext().setNext(new ListNode(15, null));
+            head.getNext().getNext().setNext(new ListNode(25, null));
+            head.getNext().getNext().getNext().setNext(new ListNode(30, null));
+            head.getNext().getNext().getNext().getNext().setNext(new ListNode(36, null));
 
-            //TreeConstruction tct = new TreeConstruction();
+
+            TreeConstruction tct = new TreeConstruction();
             //recursiveInOrder(tct.buildTreeFrmInAndPre(new int[]{2,4,5,1,9,8,10}, new int[]{1,4,2,5,8,9,10}, 0, 6));
             //recursiveInOrder(tct.buildTreeFrmInAndLevel(new TreeNode(0, null, null), new int[]{2,4,5,1,9,8,10}, new int[]{1,4,8,2,5,9,10}, 0, 6));
             //recursiveInOrder(tct.buildTreeFrmPreAndPost(new int[]{1,2,4,8,9,5,3,6,7}, new int[]{8,9,4,5,2,6,7,3,1}, 0, 8));
+            //recursiveInOrder(tct.buildCompleteFrmSLL(head));
+            recursiveInOrder(tct.constructFrmParArr(new int[]{1, 5, 5, 2, 2, -1, 3}));
 
 
             // TreeConnection tcon = new TreeConnection();
@@ -106,11 +115,11 @@ public class Main{
             //System.out.println(tv.isComplete(tree2));
             //System.out.println(tv.isLeafAtSameLevel(tree, 1));
 
-            TreeView tvi = new TreeView();
+            //TreeView tvi = new TreeView();
             //tvi.printLeftView(tree, 1);
             //tvi.printRightView(tree, 1);
             //System.out.println(tvi.printBottomView(tree4).entrySet());
-            System.out.println(tvi.printTopView(tree).entrySet());
+            //System.out.println(tvi.printTopView(tree).entrySet());
 
 
 
