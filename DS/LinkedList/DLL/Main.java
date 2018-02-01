@@ -8,8 +8,11 @@ public class Main{
 	    head.getNext().getNext().getNext().getNext().setNext(new ListNode(8, null, head.getNext().getNext().getNext().getNext()));
 	    head.getNext().getNext().getNext().getNext().getNext().setNext(new ListNode(9, null, head.getNext().getNext().getNext().getNext().getNext()));
 
-	    Reverse rev = new Reverse();
-	    print(rev.reverse(head));
+	    /*Reverse rev = new Reverse();
+	    print(rev.reverse(head));*/
+
+	    QuickSort qs = new QuickSort();
+	    print(qs.sort(head, head, getLastNode(head)));
 
 
 	}
@@ -20,5 +23,12 @@ public class Main{
 			System.out.print(head.getData()+" ");
 			head = head.getNext();
 		}
+	}
+
+
+	private static ListNode getLastNode(ListNode head){
+		while(head.getNext() != null)
+			head = head.getNext();
+		return head;
 	}
 }

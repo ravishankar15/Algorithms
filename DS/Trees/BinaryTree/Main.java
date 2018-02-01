@@ -58,8 +58,8 @@ public class Main{
 
 
       	//Traversal of Tree
-      	//TreeTraversal tt = new TreeTraversal();
-      	//tt.recursiveInOrder(tree); //Prints in InOrder(Left - Root - Right)
+      	TreeTraversal tt = new TreeTraversal();
+      	tt.recursiveInOrder(tree); //Prints in InOrder(Left - Root - Right)
       	//tt.recursivePreOrder(tree); //Prints in PreOrder(Root - Left - Right)
       	//tt.recursivePostOrder(tree); //Prints in PostOrder(Left - Right - Root)
       	//tt.printLevelOrder(tree); //Prints in LevelOrder
@@ -94,12 +94,12 @@ public class Main{
             head.getNext().getNext().getNext().getNext().setNext(new ListNode(36, null));
 
 
-            TreeConstruction tct = new TreeConstruction();
+            //TreeConstruction tct = new TreeConstruction();
             //recursiveInOrder(tct.buildTreeFrmInAndPre(new int[]{2,4,5,1,9,8,10}, new int[]{1,4,2,5,8,9,10}, 0, 6));
             //recursiveInOrder(tct.buildTreeFrmInAndLevel(new TreeNode(0, null, null), new int[]{2,4,5,1,9,8,10}, new int[]{1,4,8,2,5,9,10}, 0, 6));
             //recursiveInOrder(tct.buildTreeFrmPreAndPost(new int[]{1,2,4,8,9,5,3,6,7}, new int[]{8,9,4,5,2,6,7,3,1}, 0, 8));
             //recursiveInOrder(tct.buildCompleteFrmSLL(head));
-            recursiveInOrder(tct.constructFrmParArr(new int[]{1, 5, 5, 2, 2, -1, 3}));
+            //recursiveInOrder(tct.constructFrmParArr(new int[]{1, 5, 5, 2, 2, -1, 3}));
 
 
             // TreeConnection tcon = new TreeConnection();
@@ -121,9 +121,20 @@ public class Main{
             //System.out.println(tvi.printBottomView(tree4).entrySet());
             //System.out.println(tvi.printTopView(tree).entrySet());
 
+            System.out.println();
+            TreeConvertion trec = new TreeConvertion();
+            printList(trec.binaryTreeToDLL(tree));
+
 
 
 	}
+
+      static void printList(TreeNode tree){
+            while(tree != null){
+                  System.out.print(tree.getData()+" ");
+                  tree = tree.getRight();
+            }
+      }
 
       //Utility function for printing the path to the leaf
       static boolean printPath(TreeNode tree, TreeNode leaf){

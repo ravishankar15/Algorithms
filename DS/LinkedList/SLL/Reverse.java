@@ -123,7 +123,7 @@ public class Reverse{
 	}
 
 
-	//Pairwise swapping the elements
+	//https://www.geeksforgeeks.org/pairwise-swap-elements-of-a-given-linked-list/
 	public ListNode swapPairWise(ListNode head){
 		ListNode prev = head;
 		ListNode curr = head.getNext();

@@ -69,8 +69,8 @@ public class Main{
 	    //Merge merge = new Merge();
 	    //print(merge.mergeSortedList(srtHead1, srtHead2)); // Merging two sorted list
 
-	    //ListAddition la = new ListAddition();
-	    //print(la.addOneToList(head1));
+	   /* ListAddition la = new ListAddition();
+	    print(la.addOneToList(head1));*/
 	    //print(la.addTwoNumAsList(head1, head2));
 	    //print(la.addTwoLinkedList(head1, head2));
 
@@ -79,8 +79,11 @@ public class Main{
 	    System.out.println(p.isPalindrome(head2, head2));*/
 
 
-	    MergeSort ms = new MergeSort();
-	    print(ms.sort(head));
+	    // MergeSort ms = new MergeSort();
+	    // print(ms.sort(head));
+
+	    QuickSort qs = new QuickSort();
+	    print(qs.sort(head, getLastNode(head)));
 
 	}
 
@@ -90,5 +93,11 @@ public class Main{
 			System.out.print(head.getData()+" ");
 			head = head.getNext();
 		}
+	}
+
+	private static ListNode getLastNode(ListNode head){
+		while(head.getNext() != null)
+			head = head.getNext();
+		return head;
 	}
 }
