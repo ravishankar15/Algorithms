@@ -1,0 +1,25 @@
+Dynamic Programming: 
+	->DP is an algorithmic paradigm that solves the given complex problem by breaking it into subproblems and stores the result of subproblems to avoid computing the same result again.
+	-> Two main property of the given problem suggest that the given problem can be solved using DP.,
+		-> Overlapping Subproblems
+		-> Optimal Substructure
+
+Overlapping Subproblems:(Refer Fibonacci.java)
+	-> Like Divide and conquer, DP combines solutions to subproblems. 
+	-> DP is mainly used when the solution of the same subproblem is needed again and again
+	-> In DP, computed solutions to subproblems are stored in a table so that these dont have to recomputed.
+	-> So, Dp is not usefull when there are no common subproblems because there is no point of storing the solution if it is not going to needed again
+	Eg., The Binary search do not have a common solution hence it cannot be solved using DP., It comes under the Divide and conquer paradigm
+
+	-> There are two diffrent ways to store the values so that these values can be reused.,
+		-> Memoization(Top Down)
+		-> Tabulation(Bottom Up)
+	-> Memoization: 
+		-> The memoized program for a problem is similar to the recursive version with a small modification that it looks into a lookup table before computing solutions.
+		-> We initialize the lookup array with all initial values as NIL., whenever we need solution to a subproblem we first look into the lookup table. If the pre computed value is there than we return that value otherwise we calculate that value and put it in the table.
+	-> Tabulation:
+		-> The tabulated program for a given problem builds a table in bottom up fashion and returns the last entry from the table 
+
+Optimal Substructure:
+	-> A given problem has optimal substructure property if the optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.
+	-> Eg., Shortest path algorithm (Refer https://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/)

@@ -3,6 +3,7 @@ public class TreeNode{
 	private int height;
 	private TreeNode left;
 	private TreeNode right;
+	private int count; //For handling duplicates
 
 	public TreeNode(int data, TreeNode left, TreeNode right){
 		this.data = data;
