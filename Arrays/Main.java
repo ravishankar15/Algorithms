@@ -10,14 +10,22 @@ public class Main{
 		print(am.findPrime(50));*/
 
 
-		ArrayArrangement aa = new ArrayArrangement();
+		//ArrayArrangement aa = new ArrayArrangement();
 		//System.out.println(aa.formLargestNumber(new ArrayList<String>(){{add("54"); add("546");add("548"); add("60");}}));
 		//print(aa.posAndNegInAlternate(new int[] {-1, 2, -3, 4, 5, 6, -7, 8, 9}, 8));
 		//print(aa.rearrangePosAndNeg(new int[] {-1, 2, -3, 4, 5, 6, -7, 8, 9},0, 8));
-		print(aa.sort012(new int[]{0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}));
+		//print(aa.sort012(new int[]{0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1}));
 
 		/*ArrayCalculation ac  = new ArrayCalculation();
 		System.out.println(ac.maxDiff(new int[] {9, 2, 3, 4, 5, 6, 7, 8, 18, 0}, 10));*/
+
+
+		/*Combination comb = new Combination(new int[] {1, 2, 3, 4}, 2);
+		comb.combi(0, 0);*/
+
+
+		Permutation perm = new Permutation(new int[]{1, 2, 3, 4,});
+		perm.permute(0);
 	}
 
 	static void print(int[] arr){

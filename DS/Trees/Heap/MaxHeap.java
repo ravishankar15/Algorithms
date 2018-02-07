@@ -66,7 +66,7 @@ public class MaxHeap{
 			return harr[0];
 		}
 
-		//Store the minimum value and remove it from the heap
+		//Store the maximum value and remove it from the heap
 		int max = harr[0];
 
 		//Put the last value of the heap into the first
