@@ -123,4 +123,32 @@ public class TreeValidation{
 		return isLeafAtSameLevel(tree.getLeft(), level + 1) 
 				&& isLeafAtSameLevel(tree.getRight(), level + 1);
 	}
+
+	//https://www.geeksforgeeks.org/check-if-a-binary-tree-is-subtree-of-another-binary-tree/
+	//Note: One more approach is we can do inorder with pre/post order travesal for both
+	//trees and check one is sub tree of another. (Inorder with preorder) or 
+	//(Inorder with postorder) uniquely identifies the tree
+	public boolean isSubTree(TreeNode t, TreeNode s){
+		if(s == null)
+			return true;
+		if(t == null)
+			return false;
+
+		if(areIdentical(t, s))
+			return true;
+
+
+		return isSubTree(t.getLeft(), s) || isSubTree(t.getRight(), s);
+	}
+	private boolean areIdentical(TreeNode t, TreeNode s){
+
+		if(t == null && s == null)
+			return true;
+		if(t==null || s == null)
+			return false;
+
+		return t.getData() == s.getData() 
+				&& areIdentical(t.getLeft(), s.getLeft())
+				&& areIdentical(t.getRight(), s.getRight());
+	} 
 }

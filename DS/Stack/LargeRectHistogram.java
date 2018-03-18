@@ -43,6 +43,7 @@ public class LargeRectHistogram{
 
 	}
 
+	//Wrong solution
 	/*This is simplified version and is very much 
 		similar to the trapping rain water problem solution */
 	public int getAreaSimplified(int[] arr){

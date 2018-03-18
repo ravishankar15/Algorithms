@@ -25,11 +25,11 @@ public class Main{
 
 
 
-            TreeNode tree1 = new TreeNode(1,null, null);
-            tree1.setLeft(new TreeNode(4, null, null));
-            tree1.setRight(new TreeNode(8, null, null));
-            /*tree1.getLeft().setLeft(new TreeNode(2, null, null));
-            tree1.getLeft().setRight(new TreeNode(5, null, null));*/
+            TreeNode tree1 = new TreeNode(8,null, null);
+            tree1.setLeft(new TreeNode(9, null, null));
+            tree1.setRight(new TreeNode(10, null, null));
+            //tree1.getLeft().setLeft(new TreeNode(2, null, null));
+            //tree1.getLeft().setRight(new TreeNode(5, null, null));
 
             //Sum Tree
             TreeNode tree2 = new TreeNode(26, null, null);
@@ -58,8 +58,8 @@ public class Main{
 
 
       	//Traversal of Tree
-      	TreeTraversal tt = new TreeTraversal();
-      	tt.recursiveInOrder(tree); //Prints in InOrder(Left - Root - Right)
+      	//TreeTraversal tt = new TreeTraversal();
+      	//tt.recursiveInOrder(tree); //Prints in InOrder(Left - Root - Right)
       	//tt.recursivePreOrder(tree); //Prints in PreOrder(Root - Left - Right)
       	//tt.recursivePostOrder(tree); //Prints in PostOrder(Left - Right - Root)
       	//tt.printLevelOrder(tree); //Prints in LevelOrder
@@ -109,11 +109,12 @@ public class Main{
             printLevelConnection(tcon.connectLevelOptiRecur(tree));*/
             //printLevelConnection(tcon.connectLevelOpti(tree));
 
-            //TreeValidation tv = new TreeValidation();
+            TreeValidation tv = new TreeValidation();
             //System.out.println(tv.isSumTree(tree2));
             //System.out.println(tv.isFoldable(tree3.getLeft(), tree3.getRight()));
             //System.out.println(tv.isComplete(tree2));
             //System.out.println(tv.isLeafAtSameLevel(tree, 1));
+            System.out.println(tv.isSubTree(tree, tree1));
 
             //TreeView tvi = new TreeView();
             //tvi.printLeftView(tree, 1);
@@ -121,9 +122,9 @@ public class Main{
             //System.out.println(tvi.printBottomView(tree4).entrySet());
             //System.out.println(tvi.printTopView(tree).entrySet());
 
-            System.out.println();
+            /*System.out.println();
             TreeConvertion trec = new TreeConvertion();
-            printList(trec.binaryTreeToDLL(tree));
+            printList(trec.binaryTreeToDLL(tree));*/
 
 
 

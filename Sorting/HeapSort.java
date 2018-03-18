@@ -29,10 +29,9 @@ public class HeapSort{
 		int largest = i; //Assume the current value of index as largest
 		int l = (2*i) + 1; //Get the left child index
 		int r = (2*i) + 2; //Get the right child index
-		int p = (i-1)/2;
 
 		//Calculate the largest among the child(left or right)
-		if(l < n && arr[l] > arr[p])
+		if(l < n && arr[l] > arr[largest])
 			largest = l;
 		if(r < n && arr[r] > arr[largest])
 			largest = r;
@@ -45,7 +44,7 @@ public class HeapSort{
 			arr[i] = arr[largest];
 			arr[largest] = temp;
 
-			heapify(arr, n, p);
+			heapify(arr, n, largest);
 		}
 
 	}

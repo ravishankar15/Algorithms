@@ -15,8 +15,12 @@ public class Main{
 		cqa.enqueue(40); cqa.enqueue(50); cqa.enqueue(60); 
 		cqa.dequeue(); cqa.dequeue(); */
 
-		DQCircularArr dq = new DQCircularArr(5);
-		dq.insertRear(5); dq.insertRear(10);
-		dq.deleteRear(); dq.insertFront(15); dq.deleteFront();
+		/*DQCircularArr dq = new DQCircularArr(5);
+		dq.insertRear(5); dq.insertRear(10); dq.insertFront(15);
+		dq.deleteRear(); dq.insertFront(15); dq.deleteFront();*/
+
+		CircularQueueLL cql = new CircularQueueLL();
+		cql.enqueue(10); cql.enqueue(20);
+		cql.dequeue(); cql.dequeue();cql.dequeue();
 	}
 }
