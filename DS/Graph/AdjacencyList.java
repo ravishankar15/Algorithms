@@ -1,71 +1,71 @@
 public class AdjacencyList {
-    private String[] vertexArr;
+    private Vertex[] vertices;
     private int vertexCount;
 
     public ListNode[] adjList;
 
-    public AdjacencyList(int vertexCount, String[] vertexArr) {
-        this.vertexCount = vertexCount;
-        this.vertexArr = vertexArr;
-        this.adjList = new ListNode[vertexCount];
-        for (int i=0; i<vertexCount; i++) {
-            adjList[i] = new ListNode(vertexArr[i]);
+    public AdjacencyList(Vertex[] vertices){
+        this.vertices = vertices;
+        this.vertexCount = vertices.length;
+        adjList = new ListNode[vertexCount];
+        for(int i=0; i<vertexCount; i++){
+            adjList[i] = new ListNode(vertices[i]);
         }
     }
 
-    public void addEdge(String a, String b) {
-        int fIndex = getIndex(a);
-        int sIndex = getIndex(b);
 
-        if (fIndex >= 0 && fIndex < vertexCount && sIndex >= 0 && sIndex < vertexCount) {
-            ListNode fNode = adjList[fIndex];
-            addAtBegining(fNode, b);
-            ListNode sNode = adjList[sIndex];
-            addAtBegining(sNode, a);
+    public void addEdge(Vertex a, Vertex b){
+        int aIndex = getIndex(a);
+        int bIndex = getIndex(b);
+
+        if(aIndex >= 0 && aIndex < vertexCount && bIndex >=0 && bIndex < vertexCount){
+            ListNode aNode = adjList[aIndex];
+            addAtBegining(aNode, b);
+            ListNode bNode = adjList[bIndex];
+            addAtBegining(bNode, a);
         }
     }
 
-    public void addAtBegining(ListNode node, String sVertex) {
-        ListNode sNode = new ListNode(sVertex);
+    public void removeEdge(Vertex a, Vertex b){
+        int aIndex = getIndex(a);
+        int bIndex = getIndex(b);
+
+        if(aIndex >= 0 && aIndex < vertexCount && bIndex >=0 && bIndex < vertexCount){
+            deleteNode(aIndex, b);
+            deleteNode(bIndex, a);
+        }
+
+    }
+
+    private void addAtBegining(ListNode node, Vertex vertex){
+        ListNode vNode = new ListNode(vertex);
         ListNode currNode = node.getNext();
-        node.setNext(sNode);
-        sNode.setNext(currNode);
+        node.setNext(vNode);
+        vNode.setNext(currNode);
     }
 
-    public void removeEdge(String a, String b) {
-        int fIndex = getIndex(a);
-        int sIndex = getIndex(b);
-
-        if (fIndex >= 0 && fIndex < vertexCount && sIndex >= 0 && sIndex < vertexCount) {
-            deleteNode(fIndex, b);
-            deleteNode(sIndex, a);
-        }
-
-    }
-
-    public void deleteNode(int fIndex, String sVertex) {
-        ListNode list = adjList[fIndex];
+    private void deleteNode(int index, Vertex vertex){
+        ListNode list = adjList[index];
         ListNode prev = null;
-
-        while(list != null && !list.getData().equals(sVertex)) {
+        while(list != null && !list.getVertex().getName().equals(vertex.getName())){
             prev = list;
             list = list.getNext();
         }
 
-        if (list == null) {
+        if (list == null){
             System.out.println("Vertex not found");
-        } else if(prev != null) {
+        } else if (prev != null) {
             prev.setNext(list.getNext());
             list.setNext(null);
         }
     }
 
-    public int getIndex(String vertex) {
-        for (int i=0; i<vertexCount; i++) {
-            if (vertexArr[i].equals(vertex)){
+
+    public int getIndex(Vertex vertex){
+        for(int i=0; i<vertexCount; i++){
+            if(vertex.getName().equals(vertices[i].getName())){
                 return i;
             }
-
         }
         return -1;
     }
