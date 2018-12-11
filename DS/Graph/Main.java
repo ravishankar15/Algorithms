@@ -1,23 +1,26 @@
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
-        Vertex aVertex = new Vertex("A");
-        Vertex bVertex = new Vertex("B");
-        Vertex cVertex = new Vertex("C");
-        Vertex dVertex = new Vertex("D");
-        Vertex eVertex = new Vertex("E");
+        Vertex aVertex = new Vertex("A");//0
+        Vertex bVertex = new Vertex("B");//1
+        Vertex cVertex = new Vertex("C");//2
+        Vertex dVertex = new Vertex("D");//3
+        Vertex eVertex = new Vertex("E");//4
+        Vertex fVertex = new Vertex("F");//5
+        Vertex gVertex = new Vertex("G");//6
 
-        Vertex[] vertices = {aVertex, bVertex, cVertex, dVertex, eVertex};
+        Vertex[] vertices = {aVertex, bVertex, cVertex, dVertex, eVertex, fVertex, gVertex};
         
-        // AdjacencyList adjacencyList = new AdjacencyList(vertices);
-        // adjacencyList.addEdge(aVertex, bVertex);
-        // adjacencyList.addEdge(aVertex, cVertex);
-        // adjacencyList.addEdge(aVertex, dVertex);
-        // adjacencyList.addEdge(aVertex, eVertex);
-        // System.out.println(Arrays.toString(adjacencyList.adjList));
-        // adjacencyList.removeEdge(aVertex, bVertex);
-        // adjacencyList.removeEdge(aVertex, eVertex);
-        // System.out.println(Arrays.toString(adjacencyList.adjList));
+        AdjacencyList adjacencyList = new AdjacencyList(vertices);
+        adjacencyList.addDirectedEdge(aVertex, bVertex);
+        adjacencyList.addDirectedEdge(aVertex, cVertex);
+        adjacencyList.addDirectedEdge(bVertex, dVertex);
+        adjacencyList.addDirectedEdge(eVertex, bVertex);
+        adjacencyList.addDirectedEdge(gVertex, eVertex);
+        adjacencyList.addDirectedEdge(fVertex, gVertex);
+        adjacencyList.addDirectedEdge(fVertex, cVertex);
+        adjacencyList.addDirectedEdge(gVertex, aVertex);
+        System.out.println(Arrays.toString(adjacencyList.adjList));
 
         // AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(vertices);
         // adjacencyMatrix.addEdge(aVertex, bVertex);
@@ -29,20 +32,17 @@ public class Main {
         // adjacencyMatrix.removeEdge(aVertex, eVertex);
         // System.out.println(Arrays.deepToString(adjacencyMatrix.adjMatrix));
 
-        AdjacencyList adjacencyList = new AdjacencyList(vertices);
-        adjacencyList.addEdge(aVertex, bVertex);
-        adjacencyList.addEdge(aVertex, cVertex);
-        adjacencyList.addEdge(bVertex, eVertex);
-        adjacencyList.addEdge(dVertex, aVertex);
-        adjacencyList.addEdge(eVertex, cVertex);
-        adjacencyList.addEdge(cVertex, bVertex);
-        adjacencyList.addEdge(dVertex, eVertex);
-        System.out.println(Arrays.toString(adjacencyList.adjList));
-        DepthFirstSearch dfs = new DepthFirstSearch(adjacencyList);
-        dfs.dfsRecur(adjacencyList.adjList[0].getVertex());
-        System.out.println();
+        // DepthFirstSearch dfs = new DepthFirstSearch(adjacencyList);
+        // dfs.dfsRecur(aVertex);
+        // System.out.println();
 
 
+        // BreadthFirstSearch bfs = new BreadthFirstSearch(adjacencyList);
+        // bfs.calcBFS(aVertex);
+        // System.out.println();
+
+        MotherVertex mv = new MotherVertex(adjacencyList, vertices);
+        mv.findMotherVertex();
 
     }
 }

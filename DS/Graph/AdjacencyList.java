@@ -37,6 +37,25 @@ public class AdjacencyList {
 
     }
 
+    public void addDirectedEdge(Vertex a, Vertex b){
+        int aIndex = getIndex(a);
+        int bIndex = getIndex(b);
+
+        if(aIndex >= 0 && aIndex < vertexCount && bIndex >= 0 && bIndex < vertexCount){
+            ListNode aNode = adjList[aIndex];
+            addAtBegining(aNode, b);
+        }
+    }
+
+    public void removeDirectedEdge(Vertex a, Vertex b){
+        int aIndex = getIndex(a);
+        int bIndex = getIndex(b);
+
+        if (aIndex >= 0 && aIndex < vertexCount && bIndex >= 0 && bIndex < vertexCount) {
+            deleteNode(aIndex, b);
+        }
+    }
+
     private void addAtBegining(ListNode node, Vertex vertex){
         ListNode vNode = new ListNode(vertex);
         ListNode currNode = node.getNext();
