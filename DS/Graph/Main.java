@@ -9,17 +9,26 @@ public class Main {
         Vertex fVertex = new Vertex("F");//5
         Vertex gVertex = new Vertex("G");//6
 
-        Vertex[] vertices = {aVertex, bVertex, cVertex, dVertex, eVertex, fVertex, gVertex};
+        Vertex v0 = new Vertex("0");//0
+        Vertex v1 = new Vertex("1");//0
+        Vertex v2 = new Vertex("2");//1
+        Vertex v3 = new Vertex("3");//2
+        Vertex v4 = new Vertex("4");//3
+        Vertex v5 = new Vertex("5");//4
+        Vertex v6 = new Vertex("6");//5
+        Vertex v7 = new Vertex("7");//6
+        Vertex v8 = new Vertex("8");//6
+
+
+        //Vertex[] vertices = {aVertex, bVertex, cVertex, dVertex, eVertex, fVertex, gVertex};
+        Vertex[] vertices = {v0, v1, v2, v3, v4, v5};
         
         AdjacencyList adjacencyList = new AdjacencyList(vertices);
-        adjacencyList.addDirectedEdge(aVertex, bVertex);
-        adjacencyList.addDirectedEdge(aVertex, cVertex);
-        adjacencyList.addDirectedEdge(bVertex, dVertex);
-        adjacencyList.addDirectedEdge(eVertex, bVertex);
-        adjacencyList.addDirectedEdge(gVertex, eVertex);
-        adjacencyList.addDirectedEdge(fVertex, gVertex);
-        adjacencyList.addDirectedEdge(fVertex, cVertex);
-        adjacencyList.addDirectedEdge(gVertex, aVertex);
+        adjacencyList.addEdge(v0, v1); 
+        adjacencyList.addEdge(v0, v2); 
+        adjacencyList.addEdge(v1, v3); 
+        adjacencyList.addEdge(v2, v4); 
+        adjacencyList.addEdge(v2, v5); 
         System.out.println(Arrays.toString(adjacencyList.adjList));
 
         // AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(vertices);
@@ -41,8 +50,18 @@ public class Main {
         // bfs.calcBFS(aVertex);
         // System.out.println();
 
-        MotherVertex mv = new MotherVertex(adjacencyList, vertices);
-        mv.findMotherVertex();
+        // MotherVertex mv = new MotherVertex(adjacencyList, vertices);
+        // mv.findMotherVertex();
+
+        // TransitiveClosure tc = new TransitiveClosure(adjacencyList, vertices);
+        // System.out.println(Arrays.toString(tc.constructTC()));
+
+
+        // KCores kc = new KCores(adjacencyList, vertices, 3);
+        // kc.constructKCores();
+
+        CountNodesAtLevel cn = new CountNodesAtLevel(adjacencyList, vertices, 2);
+        cn.countNoOfNodes(v0);
 
     }
 }

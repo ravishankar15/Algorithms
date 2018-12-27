@@ -20,9 +20,9 @@ public class AdjacencyList {
 
         if(aIndex >= 0 && aIndex < vertexCount && bIndex >=0 && bIndex < vertexCount){
             ListNode aNode = adjList[aIndex];
-            addAtBegining(aNode, b);
+            addAtEnd(aNode, b);
             ListNode bNode = adjList[bIndex];
-            addAtBegining(bNode, a);
+            addAtEnd(bNode, a);
         }
     }
 
@@ -63,6 +63,14 @@ public class AdjacencyList {
         vNode.setNext(currNode);
     }
 
+    private void addAtEnd(ListNode node, Vertex vertex){
+        ListNode vNode = new ListNode(vertex);
+        while(node.getNext() != null){
+            node = node.getNext();
+        }
+        node.setNext(vNode);
+    }
+
     private void deleteNode(int index, Vertex vertex){
         ListNode list = adjList[index];
         ListNode prev = null;
@@ -88,4 +96,14 @@ public class AdjacencyList {
         }
         return -1;
     }
+
+    public int getSize(ListNode node) {
+        int count = 0;
+        while(node != null) {
+            count++;
+            node = node.getNext();
+        }
+        return count;
+    }
+
 }
