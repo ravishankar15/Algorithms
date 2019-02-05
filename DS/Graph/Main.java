@@ -20,15 +20,17 @@ public class Main {
         Vertex v8 = new Vertex("8");//6
 
 
-        //Vertex[] vertices = {aVertex, bVertex, cVertex, dVertex, eVertex, fVertex, gVertex};
-        Vertex[] vertices = {v0, v1, v2, v3, v4, v5};
+        Vertex[] vertices = {aVertex, bVertex, cVertex, dVertex, eVertex};
+        //Vertex[] vertices = {v0, v1, v2, v3, v4, v5};
         
         AdjacencyList adjacencyList = new AdjacencyList(vertices);
-        adjacencyList.addEdge(v0, v1); 
-        adjacencyList.addEdge(v0, v2); 
-        adjacencyList.addEdge(v1, v3); 
-        adjacencyList.addEdge(v2, v4); 
-        adjacencyList.addEdge(v2, v5); 
+        adjacencyList.addDirectedEdge(aVertex, bVertex); 
+        adjacencyList.addDirectedEdge(aVertex, eVertex); 
+        adjacencyList.addDirectedEdge(aVertex, cVertex); 
+        adjacencyList.addDirectedEdge(bVertex, dVertex); 
+        adjacencyList.addDirectedEdge(bVertex, eVertex);
+        adjacencyList.addDirectedEdge(cVertex, eVertex);
+        adjacencyList.addDirectedEdge(dVertex, cVertex); 
         System.out.println(Arrays.toString(adjacencyList.adjList));
 
         // AdjacencyMatrix adjacencyMatrix = new AdjacencyMatrix(vertices);
@@ -60,8 +62,11 @@ public class Main {
         // KCores kc = new KCores(adjacencyList, vertices, 3);
         // kc.constructKCores();
 
-        CountNodesAtLevel cn = new CountNodesAtLevel(adjacencyList, vertices, 2);
-        cn.countNoOfNodes(v0);
+        // CountNodesAtLevel cn = new CountNodesAtLevel(adjacencyList, vertices, 2);
+        // cn.countNoOfNodes(v0);
+
+        CountAllPaths cp = new CountAllPaths(adjacencyList, vertices);
+        cp.countOfPaths(aVertex, eVertex);
 
     }
 }

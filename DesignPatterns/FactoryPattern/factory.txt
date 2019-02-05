@@ -1,0 +1,11 @@
+Factory Pattern
+	- Factory method is a creational design pattern, related to object creation
+	- In factory pattern, we create object without exposing the creation logic to client and the client uses the same common interface
+    	to create new type of object
+
+Implementation of Factory design pattern,
+	- The creator class can be an abstract class
+	- The creator class can be a concrete class with the factory method as a virtual function
+	- The factory method may be parameterized to allow creation of diffrent types of objects.
+	- The factory method can be a static method
+	- The factory method can be an instance method

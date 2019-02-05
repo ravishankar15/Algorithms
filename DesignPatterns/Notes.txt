@@ -1,0 +1,20 @@
+Introduction:
+  - Design pattern is a general reusable solution or template to a commonly occuring problem in software desing. 
+  - The pattern typically show relationships and intractions between classes or objects
+
+Types of design patterns:
+  - There are mainly three types of design patterns
+    - Creational 
+    - Structural
+    - Behavioral
+
+Creational Pattern:
+  - These design patterns are all about class instantiation or object creation. These patterns can be furthur categorized into,
+    - Class creational patterns - uses inheritence effectively in the instantiation process.
+    - Object creational patterns - uses delegation effectively to get the job done
+
+Structural Pattern:
+  - These design patterns are about organizing diffrent classes and objects to form larger structure and provide new functionality
+
+Behavioral Pattern:
+ - These patterns are about identifying common communication patterns between objects and realize these patterns

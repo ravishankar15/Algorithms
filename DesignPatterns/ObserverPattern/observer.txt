@@ -1,0 +1,14 @@
+Observer Pattern:
+  - To understand the observer pattern, first we need to understand the subject and observer objects
+  - The relation between subject and observer can be easily understood as an anology to magazine subscription,
+    - A magazine publisher(subject) is in the business and publishes the magazines(data)
+    - If you(user of data/observer) are intrested in the magazine you subscribe(register), and if a new edition is published it get deliverd to you
+    - If you unsubscribe(unregister) you stop getting new editions
+    - Publisher dosent know who you are and how you use the magazine, It just delivers to you because you are a subscriber(loose coupling)
+
+Definition:
+  - The observer pattern defines a one to many dependency between objects so that one object changes state, all of its dependents are notified and updated
+    automatically
+Explaination:
+  - One to many dependency is between Subject(one) and observer(many).
+  - There is dependency as observers themselves don't have access to data. They are dependent on subject to provide them data.

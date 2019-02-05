@@ -24,8 +24,11 @@ public class Main{
 		comb.combi(0, 0);*/
 
 
-		Permutation perm = new Permutation(new int[]{1, 2, 3, 4,});
-		perm.permute(0);
+		// Permutation perm = new Permutation(new int[]{1, 2, 3, 4,});
+		// perm.permute(0);
+
+		Euclidean euc = new Euclidean();
+		euc.calculate(35, 15);
 	}
 
 	static void print(int[] arr){
