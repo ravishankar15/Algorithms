@@ -1,7 +1,15 @@
+/*
+  Component interface: 
+    The interface or abstract class defining the methods that will be implemented. In this case Car will be our interface
+*/
 interface Car {
   public void assemble();
 }
 
+/*
+  Component Implementation:
+    The basic implementation of the component interface. BasicCar class is our component implementation
+*/
 class BasicCar implements Car {
 
   @Override
@@ -10,6 +18,11 @@ class BasicCar implements Car {
   }
 }
 
+/*
+  Decorator:
+    Decorator class implements the component interface and it has a HAS-A relationship with the component interface. 
+    The component variable should be accessible to the child decorator classes. So we will make this variable protected
+*/
 class CarDecorator implements Car {
   protected Car car;
 
@@ -23,6 +36,10 @@ class CarDecorator implements Car {
   }
 }
 
+/*
+  Concrete Decorators:
+    Extending the base decorator functionality and modifying the component behaviour accordingly. SportsCar and LuxuryCar are decorator classes
+*/
 class SportsCar extends CarDecorator {
 
   public SportsCar(Car car){

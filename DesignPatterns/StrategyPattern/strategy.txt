@@ -1,0 +1,21 @@
+Problem statement:
+  - We are building a game "street fighter". Lets say we have four moves kick, punch, roll and jump.
+  - Every charecter has these moves only kick and punch are mandatory moves while roll and jump are optional based on the charecter
+
+Option 1:
+  - We can use inheritance create a base class(Fighter) with all the moves and let the charecters to extend that behaviour.
+  - Fighter class will have the default implementation and any charecter can have its own actions
+
+Problem in option 1:
+  - What if the charecter does not perform a jump move ? The charecter would still inherit that method we can override and leave the method empty than we need to do that for all the charecters and for all other future charecters
+ 
+ Alternate: we can use the interface and create with the optional moves but still we will not have a default implementation for the same
+
+
+ Definition:
+  The strategy pattern(also known as policy pattern) is a software design pattern that enables an algorithms behaviour to be selected at run time
+
+Usage:
+  - Strategy pattern is used when we have multiple algorithm for a specific task and client decides the actual implementation to be used at runtime
+  - We define multiple algorithms and let client application pass the algorithm to be used as a parameter.
+  - One of the best example of the strategy pattern is Collections.sort() method that takes Comparator parameter. Based on the diffrent implementations of the comparator interface, the objects are getting sorted in diffrent ways 
