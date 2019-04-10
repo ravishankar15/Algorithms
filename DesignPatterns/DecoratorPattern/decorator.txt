@@ -42,7 +42,7 @@ Disadvantages of option2:
   - What if customer wants double capsicum or double cheeseburst?
 In short our option2 violates the popular design principle "The-Open-Closed principle" which states that classes should be open for extension and closed for modification
 
-- We use inheritance or composition to extend the behaviour of an object but this is done in compile time and its applicable to all the instances of the classes. we cant add any new functionality or remove any at run time thats when decorator comes into picture
+
 - Decorator pattern is used to modify the functionality of an object at run time. At the same time other instance of the same class will not be affected
 - Decorator pattern is one of the structural pattern
 - Decorator pattern allows us to add functionality to an object at runtime(not the class)
