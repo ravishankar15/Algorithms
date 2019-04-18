@@ -1,0 +1,13 @@
+Background:
+  - Suppose we are building a home automation system. There is a programmable remote that can be used to turn on and off various item in your home like stereo, AC etc. we can do this simply by,
+    if (buttonPressed == button1)
+      lights.on()
+  - But we need to keep in mind that turing on some devices like stereo comprises of many steps like setting cd, volume etc. Alse we can reassign a button to do something else. By using if-else we are coding to implementation rather than the interface.
+  - So the design should provide a loose coupling and remote control should not have much information about a particular device
+
+Definition:
+  - The command pattern encapsulates a request as an object, thereby letting us parameterize other objects with diffrent requests, queue or log requests and support undoable operations.
+
+  - In analogy to our problem, remote control is the client and stereo, light etc., are the receivers. In command pattern there is a Command object that "encapsulates the request" by binding together a set of actions on a specific receiver. It does by exposing a method say execute() that causes some action to be invoked on the receiver.
+  - "parameterizing other objects with diffrent requests" in out analogy means that the button used to turn on the lights can later be used to turn on stereo.
+  - "queue or log requests and support undoable operations" means the command's execute operation can store state for reversing its effect on the command itself. The command may have an unExecute() method that reverses the effect of the previous call 

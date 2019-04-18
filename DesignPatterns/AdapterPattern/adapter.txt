@@ -1,0 +1,13 @@
+Background:
+  - The pattern is easy to understand as real world has lot of adapter. Lets say we have an ethernet interface on one end and USB on another. Since they both are incompatable with each other we use an adapter
+In Design,
+  - Adapters are used when we have a class(Client) expecting some type of object and we have an object(Adaptee) offering the same features but exposing in diffrent interface.
+
+Usage,
+  - The client make a request to the adapter by calling a method on it using the target interface.
+  - The adapter translates that request on the adaptee using the adaptee interface
+  - Client receive the results of the call and is unaware of adapters presence
+
+Definition:
+  - The adapter pattern convert the interface of a class into another interface clients expect.
+  - Adapter lets classes work together that couldn't otherwise because of incompatible interface

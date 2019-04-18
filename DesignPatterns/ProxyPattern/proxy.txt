@@ -1,0 +1,23 @@
+Background:
+  - They are closely related structure but not purpose to Adapter and Decorator patterns
+  Example., A cheque or credit card is a proxy for what is in our bank account. It can be used in place of cash and provides a means of accessing that cash when required. "Controls and manage access to the object they are protecting"
+
+Types of proxies:
+  - Remote Proxy:
+    - They are responsible for representing the object located remotely.
+    - Talking to the real object might involve marshalling and unmarshalling of data and talking to the remote object.
+    - All these logics are encapsulated in these proxies and the client application need not worry about them.
+  - Virtual Proxy:
+    - These objects will provide some default and instant results if the real object is supposed to take some time to produce results.
+    - These proxies initiate some default results untill the real objects are ready once the actual object is ready it will be pushed to the client.
+  Protection Proxy:
+    - If an application does not have access to some resource then such proxies will talk to the objects in the applications that have access to that resource and then get back the result
+  Smart Proxy:
+    - It provides additional layer of security by interposing specific actions when the object is accessed. Eg., To check if the real object is locked before it is accessed to ensure that no other object can change it.
+
+Problem:
+  - College internet. The proxy first checks the host you are connecting to is not part of restricted site list and then connects to it. It is an example of protection proxy.
+
+Facts:
+  - The adapter pattern gives a diffrent interface to the subject, while proxy pattern provides the same interface from the original object.
+  - Decorator provides an enhanced interface. Decorator pattern adds additional behaviour at runtime.
