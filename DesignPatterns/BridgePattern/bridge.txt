@@ -1,0 +1,13 @@
+Background:
+  - The bridge design pattern allows you to separate the abstraction from the implementation.
+  - It is a structural design pattern
+  -There are two types.,
+    - Abstraction
+    - Implementation
+  - This is a design mechanisam that encapsulates an implementation class inside of an interface class.
+  - The bridge pattern allows the Abstraction and implementation to be developed independently and the client code can access only the abstraction part without beign concerned about the implementation part
+
+Participents.,
+  - Abstraction - core of the bridge design pattern and defines the crux. Contains a reference to the implementer.
+  - Refined Abstraction - Extends the abstraction and takes the finner detail one level below. Hides the finer elements from implementors.
+  - Implementer - It defines the interface for implementations classes.

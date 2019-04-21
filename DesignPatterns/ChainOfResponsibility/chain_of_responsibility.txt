@@ -1,0 +1,14 @@
+Background:
+  - Chain of responsibility pattern is used to achive loose coupling in software design where a request from client is passed to a chain of objects to process them.
+  - The objects in the chain will decide who will be processing the request and wheather the request is required to be sent to the next object in the chain or not.
+
+When and where to use it.,
+  - when you want to decouple a request's sender and receiver
+  - Multiple objects, determined at runtime, are candidates to handle a request.
+  - When you dont want to specify handlers explicitly in your code.
+  - When you want to issue a request to one of the several objects without specifying the receiver explictly.
+
+Participents.,
+  - Handler - This can be an interface which will primarily receive the requests and dispatches the request to the chain of handlers. It has reference of only the first handler in the chain and does not know anything about the rest of the handlers.
+  - Concrete Handler -  These are actual handlers of the request chained in some squential order.
+  - Client -  Originator of request and this will access tha handler to handle it.
