@@ -1,0 +1,28 @@
+Factory Pattern
+	- Factory method is a creational design pattern, related to object creation
+	- In factory pattern, we create object without exposing the creation logic to client and the client uses the same common interface
+    	to create new type of object
+  - Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+  - A factory method is defined., a static method of a class that returns an object of the class type. 
+    But unlike an constructor,
+      - The actual object returned might be an instance of a subclass.
+      - The exsisting object might be reused, instead of new object created.
+      - Factory method can have diffrent and more descriptive names.
+
+Implementation of Factory design pattern,
+	- The creator class can be an abstract class
+	- The creator class can be a concrete class with the factory method as a virtual function
+	- The factory method may be parameterized to allow creation of diffrent types of objects.
+	- The factory method can be a static method
+	- The factory method can be an instance method
+
+
+Check List.,
+  - If you have an inheritance hierarchy that exercises polymorphism, consider adding a polymorphic creation capability by defining a static factory method in the base class.
+  - Design an arguments to the factory method. which identify the correct derived class.
+  - Consider designing an internal object pool that will allow objects to be reused instead of creating from scratch.
+  - Consider making all constructor private or protected
+
+Rules of thumb.,
+  - Factory Method: creation through inheritence. Prototype: creation through delegation
+  - Prototype doesn't require subclassing but it requires an initialize operation. Factory method requires subclassing, but doesnt require initialize.

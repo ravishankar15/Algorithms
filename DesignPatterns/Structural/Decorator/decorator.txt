@@ -1,0 +1,60 @@
+Background:
+  - Lets say we are building an application for a pizza store
+  - Pizza store offers four types of pizza - Peppy Panner, Farm house, Margherita, Chicken Fiesta
+  - Decorator provides a flexible alternative to subclassing for extending functionalities.
+Model Diagram:
+  - Pizza -> (Name: string, Description: string) -> (getDescription(), getCost())
+    - Peppy Panner -> (getCost(): int)
+    - Farm house -> (getCost(): int)
+    - Margherita -> (getCost(): int)
+    - Chicket Fiesta -> (getCost(): int)
+
+- Each pizza has diffrent cost. we have overridden the getCost() in the subclass to find the appropriate cost.
+- Now lets say a new requirement in addition to a pizza, customer can also ask for several toppings (Fresh tomato, Panner, Jalapeno etc.,)
+
+Option 1: 
+  - create a new subclass for every topping with a pizza. Will exponentially increase the classes and maintainence would be a nightmare.
+
+Option 2:
+  - lets add instance variables to pizza base class to represent whether or not each pizza has a topping
+  - Sample.,
+  public int getCost() {
+      int totalToppingCost = 0;
+      if (hasJalapeno())
+        totalToppingsCost += jalapenoCost;
+      if (hasCapsicum() )
+        totalToppingsCost += capsicumCost;
+      // similarly for other toppings
+      return totalToppingsCost;
+  }
+
+  // Sample getCost() in subclass
+  public int getCost(){
+      // 100 for Margherita and super.getCost()
+      // for toppings.
+      return super.getCost() + 100;
+  }
+
+Disadvantages of option2:
+  - Price changes in toppings will lead to alteration in the existing code
+  - New toppings will force us to add new methods and alter the getCost() method in superclaas.
+  - For some pizzas, some toppings may not be appropriate yet the subclass inherits them
+  - What if customer wants double capsicum or double cheeseburst?
+In short our option2 violates the popular design principle "The-Open-Closed principle" which states that classes should be open for extension and closed for modification
+
+
+- Decorator pattern is used to modify the functionality of an object at run time. At the same time other instance of the same class will not be affected
+- Decorator pattern is one of the structural pattern
+- Decorator pattern allows us to add functionality to an object at runtime(not the class)
+
+Check List.,
+  - Ensure the context is: single core(or non-optional) component, serveral optional embellishments or wrappers, and an interface that is common to all.
+  - Create a "Lowest Common Denominator" interface that makes all classes interchangeable
+  - Create a second level base class(Decorator) to support the optional wrapper classes.
+  - Define a decorator derived class for each optional embellishment.
+  - Decorator derived classes implement their wrapper functionality-and-delegate to the Decorator base class.
+  - The client configures the type and ordering of Core and Decorator objects.
+
+Rules of thumb.,
+  - Adapter provides a diffrent interface to its subject. Proxy provides the same interface. Decorator provides an enhanced interface
+  - Decorator is designed to let you add responsibility to objects without subclassing. Composite's focus is not on embellishment but on representation. These intents are distinct but complementary. 

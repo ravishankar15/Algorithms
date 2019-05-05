@@ -1,9 +1,0 @@
-Backgroud:
-  - Abstract factory pattern is a creational design pattern 
-  - It is similar to factory pattern is considerd as another layer of abstraction over factory pattern. It works around a super factory which creates other factory.
-
-Participents.,
-  - AbstractFactory - Declares an interface for operations that create abstract product objects.
-  - ConcreteFactory - Implements the operations declared in the AbstractFactory to create concrete product objects.
-  - Product - Defines a product object to be created by the corresponding concrete factory and implements the AbstractProduct interface.
-  - Client  - Uses only interfaces declared by AbstractFactory and AbstractProduct Classes.

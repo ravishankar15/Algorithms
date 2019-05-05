@@ -1,0 +1,27 @@
+Background:
+  - The pattern is easy to understand as real world has lot of adapter. Lets say we have an ethernet interface on one end and USB on another. Since they both are incompatable with each other we use an adapter
+In Design,
+  - Adapters are used when we have a class(Client) expecting some type of object and we have an object(Adaptee) offering the same features but exposing in diffrent interface.
+
+Usage,
+  - The client make a request to the adapter by calling a method on it using the target interface.
+  - The adapter translates that request on the adaptee using the adaptee interface
+  - Client receive the results of the call and is unaware of adapters presence
+
+Definition:
+  - The adapter pattern convert the interface of a class into another interface clients expect.
+  - Adapter lets classes work together that couldn't otherwise because of incompatible interface
+
+Check List,
+  - Identify the players, the components that want to be accommodated(client) and the component that needs to adapt(adaptee).
+  - Identify the interface that the client requires.
+  - Design a wrapper class that can impedance match the adaptee to the client.
+  - The adapter/wrapper class has a instance of the adaptee class.
+  - The adapter/wrapper class maps the client interface to the adaptee interface.
+  - The client uses the new interface.
+
+Rules of thumb.,
+  - Adapter makes things work after they are designed; Bridge makes them work before they are.
+  - Bridge is designed up-front to let the abstraction and the implementation vary independently. Adapter is retrofitted to make unrelated classes work together.
+  - Adapter provides diffrent interface to its subject. Proxy provides the same interface. Decorator provides an enhanced interface.
+  - Adapter is meant to change the interface of an existing object. Decorator enhances another object without changing its interface. Decorator is thus more transparent to the application than an adapter is. As a consequence, Decorator supports recursive composition, which isn't possible with pure adapters.

@@ -1,0 +1,25 @@
+Introduction:
+  - Singleton is a gang of "four design pattern" and it is categorized under creational design pattern
+  - Sometimes we need to have only one instance of our class for example a single DB connection shared by multiple objects as creating a separate DB connection for every object may be costly.
+  - Similarly there can be a single configuration manager or error manager in an application
+
+Definition:
+  - The singleton pattern is a design pattern that restricts the instantiation of a class to one object
+
+Points to be noted,
+  - Singleton classes can have only one instance and that instance should be globally accessible.
+  - Singleton Design Pattern is a type of creational design pattern
+  - Outer class should be prevented to create instance of singleton classes.
+
+Intent:
+  - Ensure a class has only one instance, and provide a global point of access to it.
+  - Encapsulated "just-in-time initialization" or "initialization on first use".
+
+Check List.,
+  - Define a private static attribute in the "single instance" class.
+  - Define a public static accessor function in the class.
+  - Do "lazy initialization"(creation on first use) in the accessor function.
+  - Define all constructors to be protected or private.
+  - Client may only use the accessor function to manipulate the singleton.
+
+

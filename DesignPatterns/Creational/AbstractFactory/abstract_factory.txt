@@ -1,0 +1,17 @@
+Backgroud:
+  - Abstract factory pattern is a creational design pattern 
+  - It is similar to factory pattern is considerd as another layer of abstraction over factory pattern. It works around a super factory which creates other factory.
+  - The purpose of abstract factory is to provide an interface for creating families of related objects, without specifying concrete classes.
+
+Participents.,
+  - AbstractFactory - Declares an interface for operations that create abstract product objects.
+  - ConcreteFactory - Implements the operations declared in the AbstractFactory to create concrete product objects.
+  - Product - Defines a product object to be created by the corresponding concrete factory and implements the AbstractProduct interface.
+  - Client  - Uses only interfaces declared by AbstractFactory and AbstractProduct Classes.
+
+CheckList.,
+  - Decide if platform independence and creation service are the current source of pain.
+  - Map out a matrix of platforms versus product.
+  - Define a factory interface that consists of a factory method per product.
+  - Define a factory derived class for each platform that encapsulates all references to the new operator.
+  - The client should retire all the references to the new and use the factory methods to create the product objects.

@@ -1,0 +1,31 @@
+Observer Pattern:
+  - To understand the observer pattern, first we need to understand the subject and observer objects
+  - The relation between subject and observer can be easily understood as an anology to magazine subscription,
+    - A magazine publisher(subject) is in the business and publishes the magazines(data)
+    - If you(user of data/observer) are intrested in the magazine you subscribe(register), and if a new edition is published it get deliverd to you
+    - If you unsubscribe(unregister) you stop getting new editions
+    - Publisher dosent know who you are and how you use the magazine, It just delivers to you because you are a subscriber(loose coupling)
+
+Definition:
+  - The observer pattern defines a one to many dependency between objects so that one object changes state, all of its dependents are notified and updated
+    automatically
+Explaination:
+  - One to many dependency is between Subject(one) and observer(many).
+  - There is dependency as observers themselves don't have access to data. They are dependent on subject to provide them data.
+  - Encapsulate the core(or common or engine) components in a subject abstraction, and the variable(or optional or user interface) components in an observer hierarchy
+  - The view part of Model-View-Controller
+
+Check List.,
+  - Diffrentiate between the core(or independent) functionality and the optional (or dependent) functionality.
+  - Model the independent functionality with a "subject" abstraction
+  - Model the dependent functionality with an "observer" hierarchy
+  - The subject is coupled only to the observer base class.
+  - The client configures the number and type of observers.
+  - Observers register themselves with the subject.
+  - The subject broadcasts events to all registered observers.
+  - The subject may "push" information at the observers, or the observers may "pull" the information they need from the subject.
+
+Rules of thumb.,
+  -  Chain of responsibility, Command, Mediator and Observe, address how you can decouple senders and receivers, but with diffrent trade-offs. Chain of responsibility passes a sender request along a chain of potential receivers. Command normally specifies a sender-receiver connection with a subclass. Mediator has sender and receiver reference each other indirectly. Observer defines a very decoupled interface that allows for multiple receivers to be configured at run-time.
+
+

@@ -1,0 +1,24 @@
+Background:
+  - A prototype is a template of any object before the actual object is constructed. In java also it holds the same meaning.
+  - Prototype design pattern is used in scenarios where application needs to create a number of instances of a class, which has almost same state or differs very little.
+  - The instance creation process is much costly than the object cloning process.
+  - Prototype allows us to hide the complexity of making new instances from the client.
+  - The concept is to copy an existing object rather than creating a new instance from the scratch, something that may include costly operation.
+  - The existing object acts as a prototype and the newly copied object may change same properties only if required.
+  - The approach saves costly resources and time especially when the object creating is a heavy process.
+  - The protorype design pattern is a creational pattern.
+
+Participents:
+  - Prototype - This is the prototype of actual object.
+  - Prototype Register - This is used as a registry service to have all prototypes accessible using simple string parameters.
+  - Client - will be responsible for using registry service to access prototype instances.
+
+When to use,
+  - When a system should be independent of how its products are created, composed and represented.
+  - When classes to instantiate are specified at run-time. 
+
+Check List.,
+  - Add a clone() method to the existing "product" hierarchy
+  - Design a registry that maintains a cache of prototypical objects. The registry could be encapsulated in a new Factory class or in the base class of the product hierarchy
+  - Design a factory method that: may(or may not) accept arguments, finds the correct prototype object, calls clone() on that object and return the result.
+  - The client replaces all references of the new operator with call to the factory method.

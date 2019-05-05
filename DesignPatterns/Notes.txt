@@ -15,6 +15,8 @@ Creational Pattern:
 
 Structural Pattern:
   - These design patterns are about organizing diffrent classes and objects to form larger structure and provide new functionality
+  - The structural design pattern simplifies the structure by identifying the relationships.
+  - These patterns focus on, how the classes inherit from each other and how they are composed from other classes.
 
 Behavioral Pattern:
  - These patterns are about identifying common communication patterns between objects and realize these patterns
