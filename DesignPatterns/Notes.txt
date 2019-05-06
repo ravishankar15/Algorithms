@@ -13,10 +13,32 @@ Creational Pattern:
     - Class creational patterns - uses inheritence effectively in the instantiation process.
     - Object creational patterns - uses delegation effectively to get the job done
 
+  - Abstract Factory -  Create an instance of several families of classes.
+  - Builder - Separates object construction from its representations.
+  - Factory - Create an instance of several derived classes.
+  - Prototype - A fully initialized instance to be copied or cloned.
+  - Singleton - A class of which only a single instance can exist.
+
 Structural Pattern:
   - These design patterns are about organizing diffrent classes and objects to form larger structure and provide new functionality
   - The structural design pattern simplifies the structure by identifying the relationships.
   - These patterns focus on, how the classes inherit from each other and how they are composed from other classes.
 
+  - Adapter - Match interfaces of diffrent classes.
+  - Bridge  - Separates an objects interface from its implementation
+  - Composite - A tree structure of simple and composite objects.
+  - Decorator - Add responsibilities to objects dynamically.
+  - Facade  - A single class that represents an entire system.
+  - Flyweight - A fine-grained instance used for efficient sharing
+  - Proxy - An object representing another object.
+
 Behavioral Pattern:
  - These patterns are about identifying common communication patterns between objects and realize these patterns
+ - The design patterns are all about Class's objects communications. Behavioral Pattern are those patterns that are most specifically concerned with communication between objects.
+
+ -  Chain of responsibility - A way of passing a request between a chain of objects.
+ -  Command - Encapsulate a command request as a object.
+ -  Iterator - Sequentially access the elements of a collection.
+ -  Observer  - A way of notifying change to a number of classes.
+ -  Strategy  - Encapsulates an algorithm inside a class.
+ -  Template Method - Defer the exact steps of an algorithm to a subclass.

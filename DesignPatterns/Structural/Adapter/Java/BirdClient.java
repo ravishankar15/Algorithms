@@ -48,7 +48,7 @@ class BirdAdapter implements ToyDuck {
 }
 
 
-public class Adapter {
+public class BirdClient {
   public static void main(String[] args) {
     Bird sparrow = new Sparrow();
     ToyDuck toyDuck = new PlasticToyDuck();
