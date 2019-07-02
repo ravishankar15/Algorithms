@@ -90,7 +90,7 @@ public class TrappingRainWater{
 			i++;
 
 		while(i<n){
-			while(!st.isEmpty() && arr[i] >= arr[st.peek()]){
+			while(!st.isEmpty() && arr[i] > arr[st.peek()]){
 				int top = st.pop();
 				if(st.isEmpty())
 					break;
@@ -98,7 +98,7 @@ public class TrappingRainWater{
 				//Summing the vol of the water trapped
 				//Since the maximum water saved is the minimum height of the bar
 				//we are taking the min
-				vol += (i - st.peek() - 1) * Math.min(arr[i], arr[st.peek()]);
+				vol += (i - st.peek() - 1) * (Math.min(arr[i], arr[st.peek()]) - arr[top]);
 			}
 			st.push(i);
 			i++;

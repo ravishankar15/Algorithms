@@ -1,0 +1,52 @@
+Description:
+  - A Library management system is a software built to handle the primary house keeping functions of the library.
+  - Libraries rely on our system to manage asset collectiona as well as relationships with their members
+  - Library keep track of the books and their checkout, as well as the members and subscriptions and profiles.
+  - Library management system also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.
+
+System Requirements
+  - Any library member should be able to search books by their title, author, subject category as well by the publication date
+  - Each book will have a unique identification number and other details including a rack number which will help to locate the book
+  - There could be more than one copy of a book, and library members should be able to check-out and reserve any copy. we will call each copy of book, a book item
+  - The system should be able to retrieve information like who took the particular book or what are the books checked-out by a specific library member.
+  - There should be a maximum limit of how many books a member can checkout
+  - The system should be able to collect fines for books returend after the due date
+  - Member should be able to reserve books that are not currently available. System should send notification once the book becomes available/book not returned in due date
+  - The system will be able to read barcodes from books and members library cards.
+
+Use cases
+  Main Actors
+    - Librarian - Mainly responsible for adding and modifying the books, book items and users. The librarian can also issue, reserve, and return book items.
+    - Member -  All members can search the catalog, as well as check-out, reserve, renew and return a book.
+    - System -  Mainly responsible for sending notifications for overdue books, cancelled reservations etc.
+
+  Top use cases
+    - Add/Remove/Edit Book:  To add, remove or modify a book or book item.
+    - Search Catalog: To search book by title, author, subject or publication date.
+    - Register new account/cancel membership: To add a new member or cancel the membership of an existing member
+    - Check-out book: To borrow a book from the library
+    - Reserve book: To reserve a book which is not currently available
+    - Renew book: To reborrow an already checked-out book
+    - Return book: To return a book to the library which was issued to a member
+
+Classes
+  - Library: The central part of the organization for which this software has been designed. It has name and address to distinguish from any other libraries.
+  - Book: The basic building block of the system. Every book will have ISBN, Title, Subject, Publishers etc
+  - BookItem: Any book can have multiple copies, each copy will be considered a book item in our system.
+  - Account:  We will have two types of account in the system one will be a general member, and the other will be a librarian.
+  - LibraryCard: Each library user will be issued a library card which will be used to identify users while issuing or returning books.
+  - BookReservation: Responsible for managing reservations against book items.
+  - BookLending: Manage the checking-out of book items
+  - Catalog: Our system will support searching through four catalogs: Title, Author, Subject and Publish-date.
+  - Fine: Responsible for calculating and collecting fines from members.
+  - Author: This class will encapsulate the book authors.
+  - Rack: Books will be placed on racks. Each rack will be identified by a rack number and will have a location identifier to describe the physical location of the rack in the library
+  - Notification: This will take care of sending notification
+
+Activity
+  Check-out-book: Refer check-out-book.svg
+  Return-a-book:  Refer return-a-book.svg
+  Renew-a-book: Refer renew-a-book.svg
+
+
+

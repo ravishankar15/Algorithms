@@ -6,7 +6,7 @@ public class Main{
 		//System.out.println(basic.memoizationFibo(10));
 		//System.out.println(basic.tablulationFibo(10));
 		//System.out.println(basic.recursiveSolve(6));
-		System.out.println(basic.memoizationSolve(6));
+		// System.out.println(basic.memoizationSolve(6));
 
 
 		/*LCS lcs = new LCS(new String("AGGTAB"), new String("GXTXAYB"));
@@ -35,5 +35,11 @@ public class Main{
 								                       {4, 8, 2},
 								                       {1, 5, 3}}, 2, 2);
 		System.out.println(mcp.calculate());*/
+
+
+    LCString lcString = new LCString();
+    // System.out.println(lcString.longestCommonSubString("caba", "abac"));
+    System.out.println(lcString.longestCommonSubSequence("AGGTAB", "GXTXAYB")); //"ABCDGH", "AEDFHR"
+    lcString.printLongestCommonSubSequence("AGGTAB", "GXTXAYB"); //"AGGTAB", "GXTXAYB"
 	}
 }

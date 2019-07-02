@@ -1,0 +1,2 @@
+Median of two sorted array:
+  - Median, Dividing a set into two equal length subsets, that one subset is always greater than the other 

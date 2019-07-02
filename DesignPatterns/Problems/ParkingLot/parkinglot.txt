@@ -1,0 +1,47 @@
+Description:
+  - It is a cleared area for parking vehicles. Parking lot is a feature of every city and suburban area.
+
+System Requirements:
+  - The parking lot should have multiple floors where customers can park their cars.
+  - The parking lot should have multiple entry and exit points.
+  - Customers can collect the parking ticket at the entry points and can pay at the exit points on their way out
+  - Customers can pay the ticket at the automated exit pannel or to the parking attendent.
+  - Customers can pay via both cash and credit cards.
+  - Customers should also be able to pay the parking fee at the customers info portal on each floor. If paid at info portal no need to pay at exit points.
+  - The system should not allow more vehicles than the maximum capacity of the parking lot. If full the system should show message at the entrance.
+  - Each parking floor will have many parking spots. The system should support multiple types of parking spots Compact, large, motorcycle etc.
+  - The parking lot should have some parking spots specified for electric cars. These spots should have an electric panel through which the customers can pay and charge their vehicles.
+  - The system should support parking diffrent types of vehicles car, truck, van etc.,
+  - Each parking floor should have a display board showing any free parking spot for each spot type.
+  - System should support per-hour parking model Eg., $4 for first hour, $3.5 for the second and third and $2.5 for all remaining hours.
+
+Use case:
+  - Major Actors:
+    - Admin - Mainly responsible for adding/removing floors, attendents, parking spots, entrance and exit pannels.
+    - Customer - All customers can get a parking ticket and pay for it.
+    - Parking Attendent - Can do all the activities on the customer behalf and take cash for ticket payment
+    - System - To display messages on diffrent info pannels, as well as assigning and removing a vehicle from a parking spot.
+
+  - Use cases
+    - Add/Remove/Edit parking floor: To add, remove or edit parking floor from the system. Each floor can have its own display board to show free parking spots.
+    - Add/Remove/Edit parking spot: To add, remove or edit parking pot on a parking floor.
+    - Add/Remove parking attendent: To add, remove parking attendant from the system
+    - Take ticket: Provide customers with new ticket when entering
+    - Scan ticket: Scan to find out the total charge
+    - Creditcard/cash payment: Pay using credit card or cash
+    - Add/modify parking rate: Increase or decrease the parking rate
+
+Class Diagram:
+  - ParkingLot - The cental part of the organisation for which the software is to be designed (Name and Address)
+  - ParkingFloor - The parking lot will have many parking floor.
+  - ParkingSpot - Each parking floor will have diffrent parking spots 1) Handicapped, 2) Compact, 3) Large, 4) Motorcycle, 5) Electric.
+  - Account - Two type admin and attendent
+  - ParkingTicket - Encapsulate the ticket customers will take a ticket when they enter the parking lot.
+  - Vehicle - Vehicles will be parked in the parking spots. Vehicle types 1) Car 2) Truck 3) Electric 4)Van and 5) Motorcycle.
+  - EntrancePannel and ExitPannel - Entrance, Print the tickets; Exit, facilitate payment of ticket fee
+  - Payments - The class is responsible for making the payments. supports credit/cash transactions.
+  - ParkingRate - Keep tract of hourly parking rates. will specify the dollor amount for each hour. Eg, 2hr parking ticket this class will define the cost for the first and second hour.
+  - ParkingDisplayBoard - Responsible for displaying each floor parking spaces.
+  - ParkingAttendentPortal - Encapsulates scanning tickets and processing payments.
+  - CustomerInfoPortal  - Encapsulates info portal that customers use to pay for the parking ticket. 
+  - ElectricPannel - Customers will use the electric panels to pay and charge their electric vehicles

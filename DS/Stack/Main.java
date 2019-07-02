@@ -30,10 +30,10 @@ public class Main{
 		
 
 
-		/*TrappingRainWater trap = new TrappingRainWater();
-		System.out.println(trap.trapArray(new int[]{0, 1, 0, 1, 2}));
-		System.out.println(trap.trapWithoutExtraSpace(new int[]{0, 1, 0, 1, 2}));
-		System.out.println(trap.trapStack(new int[]{0, 1, 0, 1, 2}));*/		
+		TrappingRainWater trap = new TrappingRainWater();
+		System.out.println(trap.trapArray(new int[]{3,0,0,2,0,4}));
+		/*System.out.println(trap.trapWithoutExtraSpace(new int[]{0, 1, 0, 1, 2}));*/
+		System.out.println(trap.trapStack(new int[]{3,0,0,2,0,4}));
 
 		/*StockSpan ss = new StockSpan();
 		print(ss.getStockPrice(new int[]{10, 4, 5, 90, 120, 80}));*/
@@ -54,6 +54,7 @@ public class Main{
 		//System.out.println();
 		for(int i=0; i<arr.length; i++)
 			System.out.print(arr[i]+" ");
+    System.out.println();
 	}
 
 	public static void print(Stack<Integer> st){

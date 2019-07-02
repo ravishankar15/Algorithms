@@ -2,8 +2,8 @@ import java.util.*;
 public class Main{
 	public static void main(String[] args) {
 
-		/*ArrayRotation ar = new ArrayRotation();
-		print(ar.jugglingAlgorithm(new int[]{1, 2, 3, 4, 5, 6, 7}, 2));*/
+		ArrayRotation ar = new ArrayRotation();
+		print(ar.jugglingAlgorithm(new int[]{1,2,3, 4,5,6, 7,8 }, 3));
 
 
 		/*ArrayMath am = new ArrayMath();
@@ -27,8 +27,8 @@ public class Main{
 		// Permutation perm = new Permutation(new int[]{1, 2, 3, 4,});
 		// perm.permute(0);
 
-		Euclidean euc = new Euclidean();
-		euc.calculate(35, 15);
+		// Euclidean euc = new Euclidean();
+		// euc.calculate(35, 15);
 	}
 
 	static void print(int[] arr){
