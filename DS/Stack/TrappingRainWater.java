@@ -1,4 +1,5 @@
 //http://www.geeksforgeeks.org/trapping-rain-water/
+//Refer quite similar kind of problem in two pointers - https://leetcode.com/problems/container-with-most-water/
 import java.util.*;
 public class TrappingRainWater{
 

@@ -86,4 +86,63 @@ public class LCString {
     }
     System.out.println(new String(res));
   }
+
+  //This is a brute force approach - gives better understanding on DP
+  //Time - o(n^2) space - o(n^2)
+  public String longestPalindromic(String s) {
+    if(s == null || "".equals(s)){
+      return s;
+    }
+    int length = s.length();
+    String ans = null; int max = 0;
+    boolean[][] dp = new boolean[length][length];
+    for(int i=0; i<length; i++) {
+      for(int j=0; j<=i; j++) {
+        boolean match = s.charAt(i) == s.charAt(j);
+        dp[j][i] = i-j > 2 ? dp[j+1][i-1] && match : match;
+
+        if(dp[j][i] && i-j+1 > max){
+          max = i-j+1;
+          ans = s.substring(j, i+1);
+        }
+      }
+    }
+    //Print the dp Matrix
+    // for(int i=0; i<length; i++){
+    //   for(int j=0; j<length; j++){
+    //     System.out.print(dp[i][j]+" ");
+    //   }
+    //   System.out.println();
+    // }
+    return ans;
+  }
+
+  //Time - o(n^2) space - o(1)
+  public String lpExpandAroundCorner(String s) {
+    if(s==null || "".equals(s)) return s;
+    int start = 0, end = 0;
+    FunctionalInterface fi = (String t, int l, int r) -> {
+      while(l>=0 && r < t.length() && t.charAt(l) == t.charAt(r)) {
+        l--; 
+        r++;
+      }
+      return r-l-1;
+    };
+
+    for(int i=0; i<s.length(); i++) {
+      int len1 = fi.expAroundCorner(s, i, i);
+      int len2 = fi.expAroundCorner(s, i, i+1);
+      int len = Math.max(len1, len2);
+      // 1 is added to get the first match and remove 1 for the latest match
+      if(len > end - start + 1) {
+        start = i - (len-1)/2;
+        end = i + len/2;
+      }
+    }
+    return s.substring(start, end+1);
+  }
+}
+
+interface FunctionalInterface {
+  public int expAroundCorner(String t, int l, int r);
 }

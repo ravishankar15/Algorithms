@@ -39,7 +39,9 @@ public class Main{
 
     LCString lcString = new LCString();
     // System.out.println(lcString.longestCommonSubString("caba", "abac"));
-    System.out.println(lcString.longestCommonSubSequence("AGGTAB", "GXTXAYB")); //"ABCDGH", "AEDFHR"
-    lcString.printLongestCommonSubSequence("AGGTAB", "GXTXAYB"); //"AGGTAB", "GXTXAYB"
+    //System.out.println(lcString.longestCommonSubSequence("AGGTAB", "GXTXAYB")); //"ABCDGH", "AEDFHR"
+    //lcString.printLongestCommonSubSequence("AGGTAB", "GXTXAYB"); //"AGGTAB", "GXTXAYB"
+    // System.out.println(lcString.longestPalindromic("babad")); //abcdfgdcb
+    System.out.println(lcString.lpExpandAroundCorner("babad"));
 	}
 }

@@ -2,8 +2,8 @@ import java.util.*;
 public class Main{
 	public static void main(String[] args) {
 
-		ArrayRotation ar = new ArrayRotation();
-		print(ar.jugglingAlgorithm(new int[]{1,2,3, 4,5,6, 7,8 }, 3));
+		// ArrayRotation ar = new ArrayRotation();
+		// print(ar.jugglingAlgorithm(new int[]{1,2,3, 4,5,6, 7,8 }, 3));
 
 
 		/*ArrayMath am = new ArrayMath();
@@ -29,6 +29,9 @@ public class Main{
 
 		// Euclidean euc = new Euclidean();
 		// euc.calculate(35, 15);
+
+    TwoPointers tp = new TwoPointers();
+    System.out.println(tp.maxWaterContainer(new int[] {1,8,6,2,5,4,8,3,7}));
 	}
 
 	static void print(int[] arr){
