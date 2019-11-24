@@ -20,18 +20,18 @@ public class Main{
 		System.out.println(ac.maxDiff(new int[] {9, 2, 3, 4, 5, 6, 7, 8, 18, 0}, 10));*/
 
 
-		/*Combination comb = new Combination(new int[] {1, 2, 3, 4}, 2);
-		comb.combi(0, 0);*/
+		Combination comb = new Combination(new int[] {1, 2, 3, 4, 5}, 3);
+		comb.combi(0, 0);
 
 
-		// Permutation perm = new Permutation(new int[]{1, 2, 3, 4,});
+		// Permutation perm = new Permutation(new int[]{1, 2, 3, 4});
 		// perm.permute(0);
 
 		// Euclidean euc = new Euclidean();
 		// euc.calculate(35, 15);
 
-    TwoPointers tp = new TwoPointers();
-    System.out.println(tp.maxWaterContainer(new int[] {1,8,6,2,5,4,8,3,7}));
+    // TwoPointers tp = new TwoPointers();
+    // System.out.println(tp.maxWaterContainer(new int[] {1,8,6,2,5,4,8,3,7}));
 	}
 
 	static void print(int[] arr){

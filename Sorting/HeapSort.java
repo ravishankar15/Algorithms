@@ -1,4 +1,16 @@
 //https://www.geeksforgeeks.org/heap-sort/
+// The input should be 5,6,7,1,8 .
+// By taking this input you will come to know the significance of the below code part.
+// // Build heap (rearrange array)
+// for (int i = n / 2 - 1; i >= 0; i--)
+// heapify(arr, n, i);
+
+// This part heapifying the parent nodes the child nodes will be automatically heapifyied.
+// For 4 elements of array there are 2 parent node(from 1 to 0)
+// For 8 elements of array there are 4 parent node(from 3 to 0)
+// For 14 elements of array there are 7 parent node(from 6 to 0)
+
+// That's why the loop runs from n/2-1 to 0.
 public class HeapSort{
 
 	public int[] sort(int[] arr){

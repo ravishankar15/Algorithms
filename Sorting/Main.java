@@ -17,14 +17,14 @@ public class Main{
 		print(is.sort(arr));
 		print(is.sortRecursive(arr, arr.length));*/
 
-		MergeSort ms = new MergeSort();
-		print(ms.sortRecursive(arr, 0, arr.length-1));
+		// MergeSort ms = new MergeSort();
+		// print(ms.sortRecursive(arr, 0, arr.length-1));
 
 		/*QuickSort qs = new QuickSort();
 		print(qs.sortRecursive(arr, 0, arr.length-1));*/
 
-		// HeapSort hs = new HeapSort();
-		// print(hs.sort(arr));
+		HeapSort hs = new HeapSort();
+		print(hs.sort(arr));
 	}
 
 	public static void print(int[] arr){

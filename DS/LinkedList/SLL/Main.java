@@ -66,8 +66,11 @@ public class Main{
 	    //print(loop.detectAndRemoveLoop(head)); //Detect and Remove the loop
 
 
-	    //Merge merge = new Merge();
-	    //print(merge.mergeSortedList(srtHead1, srtHead2)); // Merging two sorted list
+	    // Merge merge = new Merge();
+	    // print(merge.mergeSortedList(srtHead1, srtHead2)); // Merging two sorted list
+
+      Sword sw = new Sword();
+      System.out.println(sw.findLastMen(5));
 
 	   /* ListAddition la = new ListAddition();
 	    print(la.addOneToList(head1));*/
@@ -82,8 +85,8 @@ public class Main{
 	    // MergeSort ms = new MergeSort();
 	    // print(ms.sort(head));
 
-	    QuickSort qs = new QuickSort();
-	    print(qs.sort(head, getLastNode(head)));
+	    // QuickSort qs = new QuickSort();
+	    // print(qs.sort(head, getLastNode(head)));
 
 	}
 

@@ -34,4 +34,23 @@ public class Merge{
 		return head.getNext();
 
 	}
+
+
+  public ListNode mergeSortedListRecur(ListNode head1, ListNode head2) {
+
+    if(head1 == null)
+      return head2;
+    if(head2 == null)
+      return head1;
+
+    ListNode result = null;
+    if(head1.getData() < head2.getData()){
+      result = head1;
+      result.setNext(mergeSortedListRecur(head1.getNext(), head2));
+    } else {
+      result = head2;
+      result.setNext(mergeSortedListRecur(head1, head2.getNext()));
+    }
+    return result;
+  }
 }

@@ -1,0 +1,3 @@
+-> Trie is an efficient information re Trieval data structure. Using Trie search complexities can be brought to optimal limit (key length).
+-> Tries is a tree that stores strings. Maximum number of a node is equal to size of alphabet.
+-> Tries supports search, insert, and delete operations in O(L) time where L is the length of key. 
