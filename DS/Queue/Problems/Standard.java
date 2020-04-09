@@ -87,21 +87,28 @@ public class Standard{
 	/*To Check if the given tree is a complete binary tree*/
 	public boolean isCompleteBT(TreeNode root){
 		Queue<TreeNode> q = new LinkedList<TreeNode>();
-		q.add(root);
-
-		while(!q.isEmpty()){
-			TreeNode node = q.poll();
-			//Base condition if the node left is null and node right is not null
-			//Than it is not a complete binary tree
-			if(node.getLeft() == null && node.getRight() != null)
-				return false;
-
-			if(node.getLeft() != null)
-				q.add(node.getLeft());
-			if(node.getRight() != null)
-				q.add(node.getRight());
-		}
-
-		return true;
+    q.add(root);
+    
+    while(!q.isEmpty()) {
+        int size = q.size();
+        boolean flag = false;
+        while(size-- > 0) {
+            TreeNode top = q.poll();
+            if (top != null) {
+                q.add(top.left);
+                q.add(top.right); 
+            } else {
+                flag = true;
+                break;
+            }
+        }
+        if (flag) break;
+    }
+    
+    while(!q.isEmpty()) {
+        if (q.poll() != null)
+            return false;
+    }
+    return true;
 	}
 }

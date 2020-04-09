@@ -23,3 +23,10 @@ Overlapping Subproblems:(Refer Fibonacci.java)
 Optimal Substructure:
 	-> A given problem has optimal substructure property if the optimal solution of the given problem can be obtained by using optimal solutions of its subproblems.
 	-> Eg., Shortest path algorithm (Refer https://www.geeksforgeeks.org/dynamic-programming-set-2-optimal-substructure-property/)
+
+
+Steps to solve,
+- Identify if it is a DP problem
+- Decide a state expression with least parameters
+- Formulate state relationship
+- Do tabulation (or add memoization)
