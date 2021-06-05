@@ -1,0 +1,18 @@
+Segment Tree,
+- A very flexible data structure used to solve numerous range query problems like,
+    finding minimum, maximum sum/greatest common divisor/least common denominator in O(logn) TC
+
+what is segment tree?
+- A segment tree is a binary tree where each node represents an interval. Generally a node would store 
+one or more properties of the interval which can be queried later.
+
+why do we need this?
+- Many problems require that we give results based on query over a range or segment of available data. 
+The segment tree lets us process this type of queries in lograthemic order of time.
+Eg., We may have large number of points in space at certain distances from a central point/origin. Suppose
+we have to lookup the points which are in a certain range of distances from our origin. An ordinary lookup
+table would require a linear scan over all the possible points or all possible distances
+
+
+References:
+https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/
