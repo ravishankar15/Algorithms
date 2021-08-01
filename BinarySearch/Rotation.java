@@ -44,7 +44,7 @@ public class Rotation{
 			return arr[low];
 
 		////Only two elements are there and the second one is greater
-		if(high = low+1 && arr[high] > arr[low])
+		if(high == low+1 && arr[high] > arr[low])
 			return arr[high];
 
 		int mid = low + (high - low)/2;
