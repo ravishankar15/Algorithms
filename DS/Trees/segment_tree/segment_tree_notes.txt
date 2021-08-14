@@ -16,3 +16,10 @@ table would require a linear scan over all the possible points or all possible d
 
 References:
 https://leetcode.com/articles/a-recursive-approach-to-segment-trees-range-sum-queries-lazy-propagation/
+https://leetcode.com/problems/my-calendar-i/submissions/
+Meeting Rooms
+Meeting Rooms II
+My Calendar I
+My Calendar II
+Car Pooling
+Corporate Flight Bookings
