@@ -22,6 +22,8 @@ public class QuickSort{
 	   of pivot */
 	public int partition(int[] arr, int low, int high){
 
+		// Refer: https://leetcode.com/problems/sort-an-array/submissions/
+		// For pivot selection if not random it the TC: O(n^2)
 		int pivot = arr[high]; //Pivot
 		int i = low - 1; //Index of smaller element
 

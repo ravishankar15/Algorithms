@@ -1,4 +1,3 @@
-# Algorithm steps
 # 1. Sort all the edges in non decreasing order of their weight
 # 2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far.
 #     If cycle is not formed include this edge, Else discard it. (Union and Find)
@@ -14,15 +13,6 @@ class Edge
     end
 end
 
-class Subset
-    attr_accessor :parent, :rank
-
-    def initialize(parent, rank = 0)
-        @parent = parent
-        @rank = rank
-    end
-end
-
 class Graph
     attr_accessor :no_vertices, :no_edges, :edges
 
@@ -33,6 +23,15 @@ class Graph
         for i in 0...no_edges
             @edges[i] = Edge.new
         end
+    end
+end
+
+class Subset
+    attr_accessor :parent, :rank
+
+    def initialize(parent, rank = 0)
+        @parent = parent
+        @rank = rank
     end
 end
 
@@ -73,7 +72,7 @@ class KruskalMST
 
     def initialize(graph)
         @graph = graph
-        @result_mst = Array.new(graph.no_vertices, Edge.new)
+        @result_mst = Array.new(graph.no_vertices)
         @res_idx = 0
         @union_find = UnionFind.new(graph)
     end

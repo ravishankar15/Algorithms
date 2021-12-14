@@ -8,7 +8,10 @@ class Graph
     def initialize(no_edges, no_vertices)
         @no_edges = no_edges
         @no_vertices = no_vertices
-        @edges = Array.new(@no_edges, Edge.new)
+        @edges = Array.new(@no_edges)
+        for i in 0...@no_edges
+            @edges[i] = Edge.new
+        end
     end
 end
 
@@ -69,15 +72,15 @@ class UnionFindRank
     attr_accessor :graph
 
     def initialize
-        @graph = Graph.new(3, 3)
+        @graph = Graph.new(2, 2)
         @graph.edges[0].src = 0
         @graph.edges[0].dest = 1
 
         @graph.edges[1].src = 1
-        @graph.edges[1].dest = 2
+        @graph.edges[1].dest = 0
 
-        @graph.edges[2].src = 0
-        @graph.edges[2].dest = 2
+        # @graph.edges[2].src = 1
+        # @graph.edges[2].dest = 0
     end
 
     def is_cycle?
@@ -90,7 +93,7 @@ class UnionFindRank
         for i in 0...@graph.no_edges
             x = find(subsets, @graph.edges[i].src)
             y = find(subsets, @graph.edges[i].dest)
-
+            byebug
             return true if x == y
 
             union(subsets, x, y)
@@ -122,8 +125,8 @@ class UnionFindRank
 end
 
 
-graph = UnionFind.new
-puts graph.is_cycle?
+# graph = UnionFind.new
+# puts graph.is_cycle?
 
 graph = UnionFindRank.new
 puts graph.is_cycle?

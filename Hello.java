@@ -1,40 +1,49 @@
 import java.util.*;
 class Solution {
-    public int mincostTickets(int[] days, int[] costs) {
-        int[] dp = new int[days[days.length - 1] + 1];
-        for (int i = 1, j = 0; i < dp.length; i++) {
-            if (i != days[j]) {
-                dp[i] = dp[i - 1];
-                continue;
-            }
-
-            dp[i] = dp[i - 1] + costs[0];
-            dp[i] = Math.min(dp[i], i >= 7 ? dp[i - 7] + costs[1] : costs[1]);
-            dp[i] = Math.min(dp[i], i >= 30 ? dp[i - 30] + costs[2] : costs[2]);
-            j++;
-        }
-        System.out.println(Arrays.toString(dp));
-        return dp[dp.length - 1];
-    }
-
-
-    public void printDp(int[][]arr){
-      for (int i=0;i<arr.length; i++) {
-        for (int j=0;j<arr[0].length; j++) {
-          System.out.print(arr[i][j] + " ");
-        }
-        System.out.println();
+  public double minAreaFreeRect(int[][] points) {
+      int len = points.length;
+      double res = Double.MAX_VALUE;
+      if (len < 4) return 0.0;
+      Map<String, List<int[]>> map = new HashMap<>(); // int[] is the index of two points forming the diagonal
+      for (int i = 0; i < len; i++) {
+          for (int j = i + 1; j < len; j++) {
+              long dis = (points[i][0] - points[j][0]) * (points[i][0] - points[j][0]) + (points[i][1] - points[j][1]) * (points[i][1] - points[j][1]);
+              double centerX = (double)(points[j][0] + points[i][0])/2; // centerX and centerY is the coordinate of the diagonal center
+              double centerY = (double)(points[j][1] + points[i][1])/2;
+              String key = "" + dis + "+" + centerX + "+" + centerY; // key includes the length of the diagonal and the coordinate of the diagonal center
+              if (map.get(key) == null) map.put(key, new ArrayList<int[]>());
+              map.get(key).add(new int[]{i,j});
+          }
       }
-    }
+      for (String key : map.keySet()) {
+          if (map.get(key).size() > 1) {  
+              List<int[]> list = map.get(key);
+              for (int i = 0; i < list.size(); i++) { // there could be multiple rectangles inside
+                  for (int j = i + 1; j < list.size(); j++) {
+                      int p1 = list.get(i)[0]; // p1, p2 and p3 are the three vertices of a rectangle
+                      int p2 = list.get(j)[0];
+                      int p3 = list.get(j)[1];
+                      System.out.println(Arrays.toString(points[p1]) + "--" + Arrays.toString(points[p2]) + "--" + Arrays.toString(points[p3]));
+                      // len1 and len2 are the length of the sides of a rectangle
+                      double len1 = Math.sqrt((points[p1][0] - points[p2][0]) * (points[p1][0] - points[p2][0]) +  (points[p1][1] - points[p2][1]) * (points[p1][1] - points[p2][1])); 
+                      double len2 = Math.sqrt((points[p1][0] - points[p3][0]) * (points[p1][0] - points[p3][0]) +  (points[p1][1] - points[p3][1]) * (points[p1][1] - points[p3][1]));
+                      double area = len1 * len2; 
+                      res = Math.min(res, area);
+                  }
+              }
+          }
+      }
+      return res == Double.MAX_VALUE ?  0.0 : res;
+  }
 }
 
 public class Hello {
   // Driver code 
     public static void main(String args[]) 
     { 
-        // Solution s = new Solution();
-        // System.out.println(s.mincostTickets(new int[] {1,4,6,7,8,20}, new int[] {2,7,15}));
-      System.out.println(Optional.of("parentId").map(f -> f.replaceAll("([A-Z]+)([A-Z][a-z])", "$1_$2").replaceAll("([a-z])([A-Z])", "$1_$2").toLowerCase()).get());
-      System.out.println("parentId".replaceAll("([A-Z]+)([A-Z][a-z])", "$1_$2").replaceAll("([a-z])([A-Z])", "$1_$2").toLowerCase());
+        Solution s = new Solution();
+        System.out.println(s.minAreaFreeRect(new int[][] {{1,2},{2,1},{1,0},{0,1}}));
+      // System.out.println(Optional.of("parentId").map(f -> f.replaceAll("([A-Z]+)([A-Z][a-z])", "$1_$2").replaceAll("([a-z])([A-Z])", "$1_$2").toLowerCase()).get());
+      // System.out.println("parentId".replaceAll("([A-Z]+)([A-Z][a-z])", "$1_$2").replaceAll("([a-z])([A-Z])", "$1_$2").toLowerCase());
     }
 }
