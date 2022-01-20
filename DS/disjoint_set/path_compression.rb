@@ -1,13 +1,12 @@
-class UnionFind
-    attr_accessor :root, :rank, :size
+class PathCompression
+    attr_accessor :root, :size
 
     # TC: O(n)
     def initialize(size)
-        @root = Array.new(size)
-        @rank = Array.new(size)
+        @root = Array.new(size);
+        @size = size
         for i in 0...size
             @root[i] = i
-            @rank[i] = 1
         end
     end
 
@@ -18,21 +17,13 @@ class UnionFind
         root[x] = find(root[x])
     end
 
+
     # TC: O(log N)
     def union(x, y)
         rootx = find(x)
         rooty = find(y)
-
-        if rootx != rooty
-            if rank[rootx] > rank[rooty]
-                root[rooty] = rootx
-            elsif rank[rootx] < rank[rooty]
-                root[rootx] = rooty
-            else
-                root[rooty] = rootx
-                rank[rootx] += 1
-            end
-        end
+        
+        root[rooty] = rootx if rootx != rooty
     end
 
     # TC: O(log N)
@@ -40,7 +31,7 @@ class UnionFind
         find(a) == find(b)
     end
 end
-uf = UnionFind.new(10)
+uf = PathCompression.new(10)
 # 1-2-5-6-7 3-8-9 4
 uf.union(1, 2)
 uf.union(2, 5)

@@ -66,13 +66,13 @@ class MaxHeap
         end
 end
 mh = MaxHeap.new(5)
-mh.insert(2)
-mh.insert(7)
-mh.insert(2)
-mh.insert(16)
+mh.insert(-2)
+mh.insert(-7)
+mh.insert(-2)
+mh.insert(-16)
 puts mh.extract_max
-mh.insert(4)
-puts mh.extract_max
-puts mh.extract_max
-puts mh.extract_max
-puts mh.extract_max
+# mh.insert(4)
+# puts mh.extract_max
+# puts mh.extract_max
+# puts mh.extract_max
+# puts mh.extract_max

@@ -25,7 +25,7 @@ class MinHeap
     end
 
     def extract_min()
-        raise 'empty heap' if @heap_size == 0
+        # raise 'empty heap' if @heap_size == 0
 
         if @heap_size == 1
             @heap_size -= 1
@@ -65,7 +65,7 @@ class MinHeap
             (2*i) + 2
         end
 end
-mh = MinHeap.new(5)
+mh = MinHeap.new(1)
 mh.insert(2)
 mh.insert(7)
 mh.insert(13)

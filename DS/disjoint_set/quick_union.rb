@@ -1,46 +1,36 @@
-class UnionFind
-    attr_accessor :root, :rank, :size
+class QuickUnion
+    attr_accessor :root, :size
 
     # TC: O(n)
     def initialize(size)
-        @root = Array.new(size)
-        @rank = Array.new(size)
+        @root = Array.new(size);
+        @size = size
         for i in 0...size
             @root[i] = i
-            @rank[i] = 1
         end
     end
 
-    # TC: O(log N)
+    # TC: O(n)
     def find(x)
         return x if x == root[x]
 
-        root[x] = find(root[x])
+        find(root[x])
     end
 
-    # TC: O(log N)
+    # TC: O(n)
     def union(x, y)
         rootx = find(x)
         rooty = find(y)
-
-        if rootx != rooty
-            if rank[rootx] > rank[rooty]
-                root[rooty] = rootx
-            elsif rank[rootx] < rank[rooty]
-                root[rootx] = rooty
-            else
-                root[rooty] = rootx
-                rank[rootx] += 1
-            end
-        end
+        
+        root[rooty] = rootx if rootx != rooty
     end
 
-    # TC: O(log N)
+    # TC: O(n)
     def is_connected?(a, b)
         find(a) == find(b)
     end
 end
-uf = UnionFind.new(10)
+uf = QuickUnion.new(10)
 # 1-2-5-6-7 3-8-9 4
 uf.union(1, 2)
 uf.union(2, 5)
