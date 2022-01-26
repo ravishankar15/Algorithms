@@ -1,3 +1,4 @@
+# Refer: https://leetcode.com/submissions/detail/625972049/
 # 1. Create a min heap of size V (no of vertices). Every node in the min heap contains vertex and a key value
 # 2. Initialize the first vertex key value as 0 and all the other nodes value to be infinity
 # 3. while minheap is not empty

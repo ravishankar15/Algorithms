@@ -1,37 +1,32 @@
-# @param {String} s
-# @param {String[]} word_dict
-# @return {String[]}
-def word_break(s, word_dict)
-    all_sentences = Set.new
-    dict = {}
-    word_dict.each { |w| dict[w] = true }
+# @param {Integer} n
+# @param {Integer[][]} flights
+# @param {Integer} src
+# @param {Integer} dst
+# @param {Integer} k
+# @return {Integer}
+def find_cheapest_price(n, flights, src, dst, k)
+    int_max = 2**31
+    prev_stage = Array.new(n, int_max)
+    prev_stage[src] = 0
     
-    schars = s.chars
-    len = schars.size
-    substring = Array.new(len) { Array.new(len) }
-    for i in 0...len
-        for j in i...len
-            substring[i][j] = schars[i..j].join
+    for i in 0..k
+        curr_stage = Array.new(n, int_max)
+        for j in 0...flights.size
+            u = flights[j][0]
+            v = flights[j][1]
+            w = flights[j][2]
+            
+            if prev_stage[u] != int_max && prev_stage[u] + w < curr_stage[v]
+                curr_stage[v] = prev_stage[u] + w
+            end
         end
+        puts prev_stage.inspect
+        puts curr_stage.inspect
+        byebug
+        prev_stage = curr_stage.dup
     end
-    
-    
-    find_sentences(s.chars, 0, s.size, dict, [], substring, all_sentences)
-    all_sentences.to_a
-end
+    return -1 if curr_stage[dst] >= int_max
 
-def find_sentences(s, st, ed, word_dict, curr, substring, all_sentences)
-    if st == ed
-        all_sentences << curr.join(' ')
-        return
-    end
-    
-    for i in st...ed
-        wrd = s[st..i].join
-        if word_dict[wrd]
-            curr << wrd
-            find_sentences(s, i+1, ed, word_dict, curr, substring, all_sentences)
-            curr.pop
-        end
-    end
+    curr_stage[dst]
 end
+puts find_cheapest_price(3, [[0,1,100],[1,2,100],[0,2,500]], 0, 2, 1)
