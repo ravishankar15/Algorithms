@@ -4,7 +4,7 @@ def search(arr, x)
     while(lo <= hi)
         mid = lo + (hi - lo)/2
         return mid if arr[mid] == x
-        
+
         if arr[mid] < x
             lo = mid + 1
         else
@@ -16,13 +16,14 @@ end
 
 # Find the smallest element greater then or equal of x
 # (or) Find the first occurence of the element
+# Eg., [1,2,3,5,7], 4 -> 5
 def search_start(arr, x)
     lo = 0
     hi = arr.size-1
     ceil = -1
     while(lo <= hi)
         mid = lo + (hi-lo)/2
-        
+
         if arr[mid] < x
             lo = mid + 1
         else
@@ -36,14 +37,15 @@ end
 
 # Find the largest element smaller then or equal of x
 # (or) Find the last occurence of the element
+# Eg., [1,2,3,5,7], 4 -> 3
 def search_last(arr, x)
     lo = 0
-    hi = nums.size-1
+    hi = arr.size-1
     floor = -1
     while(lo <= hi)
         mid = lo + (hi-lo)/2
-        
-        if nums[mid] <= x
+
+        if arr[mid] <= x
             floor = mid
             lo = mid + 1
         else
@@ -60,8 +62,7 @@ def find_peak_element(nums)
     
     while(lo < hi)
         mid = lo + (hi-lo)/2
-        
-        
+
         if nums[mid] < nums[mid+1]
             lo = mid + 1
         else
