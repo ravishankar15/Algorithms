@@ -1,32 +1,38 @@
-# @param {Integer} n
-# @param {Integer[][]} flights
-# @param {Integer} src
-# @param {Integer} dst
-# @param {Integer} k
-# @return {Integer}
-def find_cheapest_price(n, flights, src, dst, k)
-    int_max = 2**31
-    prev_stage = Array.new(n, int_max)
-    prev_stage[src] = 0
-    
-    for i in 0..k
-        curr_stage = Array.new(n, int_max)
-        for j in 0...flights.size
-            u = flights[j][0]
-            v = flights[j][1]
-            w = flights[j][2]
-            
-            if prev_stage[u] != int_max && prev_stage[u] + w < curr_stage[v]
-                curr_stage[v] = prev_stage[u] + w
-            end
+1st
+def find_floor(nums, target)
+    lo = 0
+    hi = nums.size-1
+    floor = -1
+    while(lo <= hi)
+        mid = lo + (hi-lo)/2
+        
+        if nums[mid] < target
+            lo = mid + 1
+        else
+            floor = mid
+            hi = mid - 1
         end
-        puts prev_stage.inspect
-        puts curr_stage.inspect
-        byebug
-        prev_stage = curr_stage.dup
     end
-    return -1 if curr_stage[dst] >= int_max
-
-    curr_stage[dst]
+    
+    floor
 end
-puts find_cheapest_price(3, [[0,1,100],[1,2,100],[0,2,500]], 0, 2, 1)
+
+def find_ceil(nums, target)
+    lo = 0
+    hi = nums.size-1
+    ceil = -1
+    while(lo <= hi)
+        mid = lo + (hi-lo)/2
+        
+        if nums[mid] <= target
+            ceil = mid
+            lo = mid + 1
+        else
+            hi = mid - 1
+        end
+    end
+    ceil
+end
+puts "#{find_floor([5,8,8,8,8,10], 8)} => #{find_ceil([5,8,8,8,8,10], 8)}"
+puts "#{find_floor([5,8,8,8,8,9,9,9,9,10], 9)} => #{find_ceil([5,8,8,8,8,9,9,9,9,10], 9)}"
+puts "#{find_floor([5,8,8,8,8,10], 9)} => #{find_ceil([5,8,8,8,8,10], 9)}"

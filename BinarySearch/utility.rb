@@ -1,33 +1,75 @@
-def binary_search_ceil(arr, low, high, x)
-    ceil = -1
-    while (low <= high)
-        mid = low + (high - low)/2
-        if x == arr[mid]
-            return mid
-        elsif x < arr[mid]
-            ceil = mid
-            high = mid - 1
+def search(arr, x)
+    lo = 0
+    hi = arr.size - 1
+    while(lo <= hi)
+        mid = lo + (hi - lo)/2
+        return mid if arr[mid] == x
+        
+        if arr[mid] < x
+            lo = mid + 1
         else
-            low = mid + 1
+            hi = mid - 1
         end
     end
+    -1
+end
+
+# Find the smallest element greater then or equal of x
+# (or) Find the first occurence of the element
+def search_start(arr, x)
+    lo = 0
+    hi = arr.size-1
+    ceil = -1
+    while(lo <= hi)
+        mid = lo + (hi-lo)/2
+        
+        if arr[mid] < x
+            lo = mid + 1
+        else
+            ceil = mid
+            hi = mid - 1
+        end
+    end
+
     ceil
 end
 
-def binary_search_floor(arr, low, high, x)
+# Find the largest element smaller then or equal of x
+# (or) Find the last occurence of the element
+def search_last(arr, x)
+    lo = 0
+    hi = nums.size-1
     floor = -1
-    while (low <= high)
-        mid = low + (high - low)/2
-        if x == arr[mid]
-            return mid
-        elsif x < arr[mid]
-            high = mid - 1
-        else
+    while(lo <= hi)
+        mid = lo + (hi-lo)/2
+        
+        if nums[mid] <= x
             floor = mid
-            low = mid + 1
+            lo = mid + 1
+        else
+            hi = mid - 1
         end
     end
     floor
+end
+
+# For reference
+def find_peak_element(nums)
+    lo = 0
+    hi = nums.size-1
+    
+    while(lo < hi)
+        mid = lo + (hi-lo)/2
+        
+        
+        if nums[mid] < nums[mid+1]
+            lo = mid + 1
+        else
+            hi = mid
+        end
+    end
+    
+    lo
 end
 
 def find_last_occurence(arr, low, high, x, len)
