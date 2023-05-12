@@ -1,6 +1,7 @@
 Matrix:
 - The shortest distance between two points in the matrix along the axis is |x1 - x2| + |y1-y2|
 
+list1.map.with_index { |x, i| [x, i] }.to_h
 
 directions = [[0,1],[0,-1],[-1,0],[1,0]]
 directions = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]]
@@ -10,3 +11,30 @@ int y[] = { -1,  0,  1, -1, 1, -1, 0, 1 };
 
 https://www.amazon.in/JBL-Wireless-Playtime-Bluetooth-Assistant/dp/B08P71M4TR/ref=sr_1_3?dchild=1&keywords=ear%2Bwireless%2Bearbuds&qid=1635855864&refinements=p_89%3AJBL&rnid=3837712031&s=electronics&sr=1-3&th=1
 https://www.flipkart.com/realme-buds-air-2-active-noise-cancellation-anc-bluetooth-headset/p/itm7f754afa16fe3?pid=ACCFZCSJWDAZRECZ&lid=LSTACCFZCSJWDAZRECZH3OGHO&marketplace=FLIPKART&q=ear+buds&store=0pm%2Ffcn&srno=s_1_1&otracker=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&otracker1=AS_QueryStore_OrganicAutoSuggest_1_8_na_na_na&fm=SEARCH&iid=8c336b54-4a45-4070-b66e-7806969cbb10.ACCFZCSJWDAZRECZ.SEARCH&ppt=sp&ppn=sp&qH=bf539cbe8cbe03a3
+
+
+
+Hi Team, 
+
+My name is Ravi and I am from India. Me and my friends wanted to plan domestic trip. We are overwhelmed by looking at the places that match our interest and most of us are busy with our work/personal life.
+
+We are a group of young people looking for some adventure activities, heritage sights and mesmerizing view points. Some of the places that came up in our discussions are Himachal, Sikkim, Uttrakand where we found some adventure activities like River Rafting, trekking, camping etc. But some seems to be off-season and we are not sure if the activities and places we choose will be available for visit and enjoyable.
+
+Some basic details,
+No of people: 5-7
+Trip Duration: 4N/5D
+Tentative Dates: Jan 2023 (3rd or 4th weekends)
+
+We where hoping you can help us plan a once in a life time memorable trip. Let me know if you need further details.
+Looking forward to hear from you.
+
+
+def set_bit(mask, i)
+    mask^(1<<i)
+end
+
+def is_set?(mask, i)
+    !((mask & (1<<i)) == 0)
+end
+
+next if is_set?(mask, i)

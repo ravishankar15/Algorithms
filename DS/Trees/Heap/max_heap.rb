@@ -76,3 +76,79 @@ puts mh.extract_max
 # puts mh.extract_max
 # puts mh.extract_max
 # puts mh.extract_max
+class MaxHeap
+    attr_accessor :harr, :hsize, :capacity
+    
+    def initialize(capacity)
+        @capacity = capacity
+        @hsize = 0
+        @harr = Array.new(@capacity)
+    end
+    
+    def insert(val)
+        return if full?
+        
+        i = @hsize
+        @harr[@hsize] = val
+        @hsize += 1
+        
+        while(i != 0 && @harr[parent(i)] < @harr[i])
+            @harr[parent(i)], @harr[i] = @harr[i], @harr[parent(i)]
+            i = parent(i)
+        end
+    end
+    
+    def extract()
+        return if empty?
+        
+        max = peak()
+        @hsize -= 1
+        @harr[0] = @harr[@hsize]
+        heapify(0)
+        max
+    end
+    
+    def size
+        @hsize
+    end
+    
+    def peak()
+        @harr[0]
+    end
+    
+    def empty?
+        @hsize == 0
+    end
+    
+    def full?
+        @hsize == @capacity
+    end
+    
+    private
+    
+    def heapify(i)
+        l = left(i)
+        r = right(i)
+        lr = i
+        
+        lr = l if l < @hsize && @harr[i] < @harr[l]
+        lr = r if r < @hsize && @harr[lr] < @harr[r]
+        
+        if (i != lr)
+            @harr[i], @harr[lr] = @harr[lr], @harr[i]
+            heapify(lr)
+        end
+    end
+    
+    def parent(i)
+        (i-1)/2
+    end
+
+    def left(i)
+        (2*i) + 1
+    end
+
+    def right(i)
+        (2*i) + 2
+    end
+end
