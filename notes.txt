@@ -38,3 +38,5 @@ def is_set?(mask, i)
 end
 
 next if is_set?(mask, i)
+
+Help me !!
